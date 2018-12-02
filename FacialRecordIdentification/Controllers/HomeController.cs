@@ -83,39 +83,24 @@ namespace FacialRecordIdentification.Controllers
             {
                 string _FileExtension = Path.GetExtension(model.WebCam.FileName);
                 string _NewImageName = string.Concat(Guid.NewGuid().ToString(), _FileExtension);
-                model.WebCam.SaveAs(Path.Combine(_ProfileImgDirectory, _NewImageName));
+                Task<float[]> taskFaceEncode = FaceEncodeAsync(model.WebCam.InputStream, _NewImageName); //Create new face encoding task
 
-                //HttpContent stringContent = new StringContent(paramString);
-                HttpContent fileStreamContent = new StreamContent(model.WebCam.InputStream);
-                //HttpContent bytesContent = new ByteArrayContent(paramFileBytes);
-                using (var client = new HttpClient())
+                model.WebCam.SaveAs(Path.Combine(_ProfileImgDirectory, _NewImageName)); //save uploaded new profile picture
+
+                float[] unknownFaceEncoding = await taskFaceEncode; //get unknown face encodings
+
+                dc.PatientProfiles.InsertOnSubmit(new PatientProfile
                 {
-                    using (var formData = new MultipartFormDataContent())
-                    {
-                        //formData.Add(stringContent, "webcam", "param1");
-                        formData.Add(fileStreamContent, "webcam", _NewImageName);
-                        //formData.Add(bytesContent, "file2", "file2");
-                        var response = await client.PostAsync(_FRECApiURL + "/faceencode", formData);
-                        if (!response.IsSuccessStatusCode)
-                            return null;
+                    PatientID = model.PatientId,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    ProfilePicture = _NewImageName,
+                    PreCalFaceEncoding = SetEncodings(unknownFaceEncoding), //convert face encodings to comma separated string
+                    CreatedDate = DateTime.Now
+                });
+                dc.SubmitChanges(); //save patient profile record
 
-                        var contents = await response.Content.ReadAsStringAsync();
-                        var faceEncodings = JsonConvert.DeserializeObject<float[]>(contents);
-
-                        dc.PatientProfiles.InsertOnSubmit(new PatientProfile
-                        {
-                            PatientID = model.PatientId,
-                            FirstName = model.FirstName,
-                            LastName = model.LastName,
-                            ProfilePicture = _NewImageName,
-                            PreCalFaceEncoding = SetEncodings(faceEncodings), //face encoding values to comma separated string
-                            CreatedDate = DateTime.Now
-                        });
-                        dc.SubmitChanges();
-
-                        return Json(new { code = 200, text = "success" });
-                    }
-                }
+                return Json(new { code = 200, text = "success" });
             }
             catch (Exception ex)
             {
@@ -143,17 +128,18 @@ namespace FacialRecordIdentification.Controllers
         [HttpPost, Route("Record/Search")]
         public async Task<JsonResult> SearchPatientRecord(HttpPostedFileBase webcam)
         {
-            Task<float[]> taskFaceEncode = FaceEncodeAsync(webcam.InputStream, webcam.FileName);
+            Task<float[]> taskFaceEncode = FaceEncodeAsync(webcam.InputStream, webcam.FileName); //Create new face encoding task
+            var knownFaceEncodings = dc.PatientProfiles.ToList().OrderBy(d => d.PatientID).Select(d => new { d.PatientID, d.PreCalFaceEncoding }); //load known face encodings from database
 
-            var knownFaceEncodings = dc.PatientProfiles.ToList().OrderBy(d => d.PatientID).Select(d => new { d.PatientID, d.PreCalFaceEncoding });
-            float[] unknownFaceEncoding = await taskFaceEncode;
-            var searchModel = new SearchPatientRecordModel(knownFaceEncodings.Select(d => d.PatientID).ToArray(), knownFaceEncodings.Select(d => GetEncodings(d.PreCalFaceEncoding)).ToArray(), unknownFaceEncoding);
+            float[] unknownFaceEncoding = await taskFaceEncode; //get unknown face encodings
+            var searchModel = new SearchPatientRecordModel(
+                knownFaceId: knownFaceEncodings.Select(d => d.PatientID).ToArray(),
+                knownFaceEncoding: knownFaceEncodings.Select(d => GetEncodings(d.PreCalFaceEncoding)).ToArray(),
+                unknownFaceEncoding: unknownFaceEncoding); //fill search patient record model with known faces id array, known faces encoding array and unknown face encoding to be searched
             
-            
-
             HttpContent stringContent = new StringContent(JsonConvert.SerializeObject(searchModel));
             HttpContent fileStreamContent = new StreamContent(webcam.InputStream);
-            //HttpContent bytesContent = new ByteArrayContent(paramFileBytes);
+
             using (var client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Accept.Clear();
