@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacialRecordIdentification", "FacialRecordIdentification\FacialRecordIdentification.csproj", "{29198404-D7CD-4947-8F8A-555F9AD67C0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29198404-D7CD-4947-8F8A-555F9AD67C0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29198404-D7CD-4947-8F8A-555F9AD67C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29198404-D7CD-4947-8F8A-555F9AD67C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29198404-D7CD-4947-8F8A-555F9AD67C0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39A3E3D6-1F19-4D39-8113-019783BD36BA}
+	EndGlobalSection
+EndGlobal
