@@ -131,7 +131,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CreatePatientRecordModel.cs" />
+    <Compile Include="Models\PatientRecordModel.cs" />
     <Compile Include="Models\FacialRecMgmtDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

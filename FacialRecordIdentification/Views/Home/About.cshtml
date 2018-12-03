@@ -1,7 +1,83 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Camera</div>
+            <div class="panel-body">
+                <div id="my_camera"></div>
+                <div id="results"></div>
+                <!-- A button for taking snaps -->
+                <form>
+                    <button type="button" id="btnWebcamStart" class="btn btn-primary" title="Start"><span class="glyphicon glyphicon-record"></span></button>
+                    <button type="button" id="btnWebcamStop" class="btn btn-danger" title="Stop"><span class="glyphicon glyphicon-ban-circle"></span></button>
+                    <button type="button" id="btnTakeSnapshot" class="btn btn-success" title="Snapshot"><span class="glyphicon glyphicon-camera"></span></button>
+                </form>
 
-<p>Use this area to provide additional information.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Matching Result</div>
+            <div class="panel-body">
+                <div id="matchResults"></div>
+                <div id="lblPatientName">Dhanuka Jayasinghe</div>
+                <table class="table table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Primary Diagnosis Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblPrimaryDiagnosis">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/webcam.js"></script>
+    <script>
+        $(document).ready(function (e) {
+            var $snapshot_datauri; //global variable to save snapshot data uri
+            $('#btnTakeSnapshot').click(function (e) {
+                e.preventDefault();
+                // take snapshot and get image data
+                Webcam.snap(function (data_uri) {
+                    $snapshot_datauri = data_uri; //save data_uri to global variable
+                    // display results in page
+                    document.getElementById('results').innerHTML =
+                        '<img src="' + data_uri + '"/>';
+                    $('#results').removeClass('hidden');
+                    $('#btnWebcamStop').click();
+                    Webcam.upload(data_uri,
+                        '/Patient/Record/Search',
+                        function (code, data) {
+                            var result = JSON.parse(data);
+                            console.log(result);
+                            document.getElementById('matchResults').innerHTML ='<img src="' + result.data.Profile.Picture + '"/>';
+                        });
+
+                });
+            });
+            $('#btnWebcamStart').click(function (e) {
+                $('#my_camera').removeClass('hidden');
+                $('#results').addClass('hidden');
+                Webcam.set({
+                    width: 320,
+                    height: 240,
+                    image_format: 'jpeg',
+                    jpeg_quality: 90
+                });
+                Webcam.attach('#my_camera');
+            });
+            $('#btnWebcamStop').click(function (e) {
+                $('#my_camera').addClass('hidden');
+                Webcam.reset();
+            });
+        });
+    </script>
+
+}
