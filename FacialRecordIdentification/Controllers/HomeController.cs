@@ -91,10 +91,10 @@ namespace FacialRecordIdentification.Controllers
             {
                 string _FileExtension = Path.GetExtension(model.WebCam.FileName);
                 string _NewImageName = string.Concat(Guid.NewGuid().ToString(), _FileExtension);
-                Task<float[]> taskFaceEncode = FaceEncodeAsync(model.WebCam.InputStream, _NewImageName); //Create new face encoding task
 
                 model.WebCam.SaveAs(Path.Combine(_ProfileImgDirectory, _NewImageName)); //save uploaded new profile picture
-
+                Task<float[]> taskFaceEncode = FaceEncodeAsync(model.WebCam.InputStream, _NewImageName); //Create new face encoding task
+                
                 float[] unknownFaceEncoding = await taskFaceEncode; //get unknown face encodings
 
                 dc.PatientProfiles.InsertOnSubmit(new PatientProfile
