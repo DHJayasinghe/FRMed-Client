@@ -104,12 +104,9 @@
                 Webcam.snap(function (data_uri) {
                     $snapshot_datauri = data_uri; //save data_uri to global variable
                     // display results in page
-                    document.getElementById('results').innerHTML =
-                        '<img src="' +
-                        data_uri +
-                        '"/>';
+                    document.getElementById('results').innerHTML = '<img src="' + data_uri + '"/>';
                     $('#formSearch').removeClass('hidden');
-
+                    
                     //Webcam.upload(data_uri,
                     //    '/Patient/Record/Search',
                     //    function (code, data) {
@@ -175,6 +172,7 @@
             $('#formPatientRegister').submit(function (e) {
                 e.preventDefault();
                 var formdata = searializeForm($(this), $snapshot_datauri);
+
                 $.ajax({
                     url: "/Patient/Record/Save",
                     data: formdata,
@@ -183,6 +181,7 @@
                     processData: false,
                     method: "POST",
                     success: function (data) {
+                        alert('Patient Record Saved');
                         console.log(data);
                     }, error: function (jqXHR, textStatus, errorThrown) {
                         console.log(jqXHR);

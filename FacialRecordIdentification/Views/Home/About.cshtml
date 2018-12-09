@@ -1,10 +1,12 @@
 ﻿@{
+    /**/
+
     ViewBag.Title = "About";
 }
 <div class="row">
     <div class="col-md-4">
         <div class="panel panel-default">
-            <div class="panel-heading">Camera</div>
+            <div class="panel-heading">Scanner</div>
             <div class="panel-body">
                 <div id="my_camera"></div>
                 <div id="results"></div>
@@ -23,15 +25,16 @@
             <div class="panel-heading">Matching Result</div>
             <div class="panel-body">
                 <div id="matchResults"></div>
-                <div id="lblPatientName">Dhanuka Jayasinghe</div>
+                <div id="lblPatientName" class="text-uppercase text-center" style="font-weight:bold"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Primary Diagnosis Description</div>
+            <div class="panel-body">
                 <table class="table table-condensed table-striped">
-                    <thead>
-                        <tr>
-                            <th colspan="2">Primary Diagnosis Description</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tblPrimaryDiagnosis">
-                    </tbody>
+                    <tbody id="tblPrimaryDiagnosis"></tbody>
                 </table>
             </div>
         </div>
@@ -48,18 +51,31 @@
                 Webcam.snap(function (data_uri) {
                     $snapshot_datauri = data_uri; //save data_uri to global variable
                     // display results in page
-                    document.getElementById('results').innerHTML =
-                        '<img src="' + data_uri + '"/>';
-                    $('#results').removeClass('hidden');
-                    $('#btnWebcamStop').click();
-                    Webcam.upload(data_uri,
-                        '/Patient/Record/Search',
-                        function (code, data) {
-                            var result = JSON.parse(data);
-                            console.log(result);
-                            document.getElementById('matchResults').innerHTML ='<img src="' + result.data.Profile.Picture + '"/>';
-                        });
+                    $('#results').html('<img src="' + data_uri + '"/>').removeClass('hidden');
+                    $('#matchResults').html('Searching for a Matching Result...');
+                    $('#tblPrimaryDiagnosis').empty(); //clear diagnosis description section
+                    $('#btnWebcamStop').click(); //stop running webcam
 
+                    Webcam.upload(data_uri, '/Patient/Record/Search', function (code, data) {
+                        var result = JSON.parse(data);
+                        console.log(result);
+                        if (result.code === 200) {
+                            $('#matchResults').html('<img src="' + result.data.Profile.Picture + '"/>');
+
+                            var appendstrng = '';
+                            //console.log(result.data.Admissions);
+                            $('#lblPatientName').html(result.data.Profile.FullName);
+                            $.each(result.data.Admissions, function (index, obj) {
+                                appendstrng += '<tr><td>' + obj.DiagnosisCode + '</td><td>' + obj.DiagnosisDescription + '</td></tr>';
+                            });
+                            $('#tblPrimaryDiagnosis').append(appendstrng);
+                        } else if (result.code === 404) {
+                            $('#matchResults').html('<h5 class="text-warning">' + result.text + '</h5>');
+                        }
+                        else {
+                            $('#matchResults').html('<h5 class="text-danger">' + result.text + '</h5>');
+                        }
+                    });
                 });
             });
             $('#btnWebcamStart').click(function (e) {
