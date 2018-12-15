@@ -124,4 +124,13 @@ namespace FacialRecordIdentification.Models
             LabDateTime = labDateTime.ToString("yyyy-MM-dd hh:mm:ss tt");
         }
     }
+
+    /// <summary>
+    /// Patient Age Gender Model to Deserialize Age, Gender Detection Result
+    /// </summary>
+    public class PatientAgeGenderModel
+    {
+        public char Gender { get; set; }
+        public int Age { get; set; }
+    }
 }

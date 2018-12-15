@@ -52,6 +52,7 @@
                     $snapshot_datauri = data_uri; //save data_uri to global variable
                     // display results in page
                     $('#results').html('<img src="' + data_uri + '"/>').removeClass('hidden');
+                    $('#lblPatientName').empty();
                     $('#matchResults').html('Searching for a Matching Result...');
                     $('#tblPrimaryDiagnosis').empty(); //clear diagnosis description section
                     $('#btnWebcamStop').click(); //stop running webcam
