@@ -17,18 +17,15 @@ namespace FacialRecordIdentification.Controllers
     [RoutePrefix("Patient")]
     public class HomeController : Controller
     {
-        private FacialRecMgmtDBDataContext dc;
+        private readonly FacialRecMgmtDBDataContext dc;
+        private readonly string _ProfileImgDirectory = "";
+        private readonly string _FRECApiURL= "http://localhost:5001/frec/api"; //face recognition module, Python FLASK web service url
         Random rnd = new Random();
-        private string _ProfileImgDirectory = "";
-        private string _FRECApiURL; //face recognition module, Python FLASK web service url
 
         public HomeController()
         {
             dc = new FacialRecMgmtDBDataContext(ConfigurationManager.ConnectionStrings["FacialRecMgmtDBConnectionString"].ConnectionString);
-
-            //change this according to your running Python FLASK url
-            _FRECApiURL = "http://localhost:5001/frec/api";
-
+            
             //set attachment save directory path for patient profile images
             _ProfileImgDirectory = AppDomain.CurrentDomain.BaseDirectory + "/App_Data/PatientProfileImgData";
 
@@ -43,8 +40,6 @@ namespace FacialRecordIdentification.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
@@ -187,7 +182,7 @@ namespace FacialRecordIdentification.Controllers
         /// Search Patient Medical Record using Uploaded Patient Image
         /// </summary>
         [HttpPost, Route("Record/Search")]
-        public async Task<JsonResult> SearchPatientRecord(HttpPostedFileBase webcam)
+        public async Task<JsonResult> SearchPatientRecord(HttpPostedFileBase webcam, bool getMatchingResult = true)
         {
             try
             {
@@ -201,9 +196,10 @@ namespace FacialRecordIdentification.Controllers
 
                 float[] unknownFaceEncodings = await taskFaceEncode; //get unknown face encodings
                 string ageGenderDetectResult = await taskGenderDetect;
+                //string ageGenderDetectResult = "NA";
 
                 if (unknownFaceEncodings == default(float[]) || !unknownFaceEncodings.Any())
-                    return Json(new { code = HttpStatusCode.NotFound, text = "No Face Detected On Snapshot" });
+                    return Json(new { code = HttpStatusCode.BadRequest, text = "No Face Detected On Snapshot" });
 
                 char GenderFilter = 'U'; //U = Unknown, M=Male Only, F=Female Only
                 if (!new[] { "NA", "BAD_REQUEST" }.Contains(ageGenderDetectResult))
@@ -231,7 +227,7 @@ namespace FacialRecordIdentification.Controllers
 
 
                 Guid patientId = Guid.Parse(result);
-                var diagnoseHistory = PatientHistory(patientId);
+                var diagnoseHistory = getMatchingResult ? PatientHistory(patientId) : null;
 
                 return Json(new { code = HttpStatusCode.OK, text = "Matching Record Found", data = diagnoseHistory });
             }

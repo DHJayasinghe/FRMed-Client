@@ -131,6 +131,6 @@ namespace FacialRecordIdentification.Models
     public class PatientAgeGenderModel
     {
         public char Gender { get; set; }
-        public int Age { get; set; }
+        public int? Age { get; set; }
     }
 }

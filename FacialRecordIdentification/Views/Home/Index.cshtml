@@ -1,93 +1,86 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
-
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-9">
         <div class="panel panel-default">
-            <div class="panel-heading">Camera</div>
+            <div class="panel-heading"><h5 class="panel-title" style="font-weight:bold;">Patient Registration (Mock Data)</h5></div>
             <div class="panel-body">
-                <div id="my_camera"></div>
-                <!-- A button for taking snaps -->
-                <form>
-                    <button type="button" id="btnWebcamStart" class="btn btn-primary" title="Start"><span class="glyphicon glyphicon-record"></span></button>
-                    <button type="button" id="btnWebcamStop" class="btn btn-danger" title="Stop"><span class="glyphicon glyphicon-ban-circle"></span></button>
-                    <button type="button" id="btnTakeSnapshot" class="btn btn-success" title="Snapshot"><span class="glyphicon glyphicon-camera"></span></button>
-                </form>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">Captured Photo</div>
-            <div class="panel-body">
-                <div id="results">Your captured image will appear here...</div>
-                <form id="formSearch" class="hidden">
-                    <button type="submit" id="btnTakeSnapshot" class="btn btn-primary" title="Take Snapshot"><span class="glyphicon glyphicon-search"></span>Search</button>
-                </form>
-            </div>
-            <br />
-            <br />
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">Mock Data - Patient Registration</div>
-            <div class="panel-body">
-                <form id="formPatientRegister" role="form" class="form-horizontal">
-                    <input type="hidden" name="PatientId" />
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-4 control-label">First Name</label>
-                        <div class="col-md-8">
-                            <input type="text" name="FirstName" class="form-control" placeholder="First Name" />
-                        </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div id="my_camera"></div>
+                        <div id="results"></div>
+                        <!-- A button for taking snaps -->
+                        <form>
+                            <button type="button" id="btnWebcamStart" class="btn btn-primary" title="Start Webcam"><span class="glyphicon glyphicon-facetime-video"></span></button>
+                            <button type="button" id="btnWebcamStop" class="btn btn-danger" title="Stop Webcam"><span class="glyphicon glyphicon-ban-circle"></span></button>
+                            <button type="button" id="btnTakeSnapshot" class="btn btn-success" title="Take a Snapshot"><span class="glyphicon glyphicon-camera"></span></button>
+                        </form>
                     </div>
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-4 control-label">Last Name</label>
-                        <div class="col-md-8">
-                            <input type="text" name="LastName" class="form-control" placeholder="Last Name" />
-                        </div>
+                    <div class="col-md-7">
+                        <form id="formPatientRegister" role="form" class="form-horizontal">
+                            <input type="hidden" name="PatientId" />
+                            <div class="form-group form-group-sm row">
+                                <label class="col-sm-4 control-label">First Name</label>
+                                <div class="col-md-8">
+                                    <input type="text" required name="FirstName" class="form-control" placeholder="First Name" />
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm row">
+                                <label class="col-sm-4 control-label">Last Name</label>
+                                <div class="col-md-8">
+                                    <input type="text" required name="LastName" class="form-control" placeholder="Last Name" />
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm row">
+                                <label class="col-sm-4 control-label">D.O.B</label>
+                                <div class="col-md-8">
+                                    <div class="input-group">
+                                        <input type="text" name="DOB" readonly class="form-control" />
+                                        <div class="input-group-btn">
+                                            <button id="btnMockData" type="button" title="Generate Random Data" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-refresh"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm row">
+                                <label class="col-sm-4 control-label">Gender</label>
+                                <div class="col-md-8">
+                                    <input type="text" name="Gender" readonly class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm row">
+                                <label class="col-sm-4 control-label">Language</label>
+                                <div class="col-md-8">
+                                    <input type="text" name="Language" readonly class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm row">
+                                <label class="col-sm-4 control-label">Marital Status</label>
+                                <div class="col-md-8">
+                                    <input type="text" name="MaritalStatus" readonly class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm row">
+                                <label class="col-sm-4 control-label">Race</label>
+                                <div class="col-md-8">
+                                    <input type="text" name="Race" readonly class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group form-group-sm row">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button id="btnRegister" type="submit" class="btn btn-primary" disabled>Save</button>
+                                    <button type="reset" class="btn btn-default">Clear</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <div id="matchResults" class="text-center"></div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-4 control-label">D.O.B</label>
-                        <div class="col-md-8">
-                            <input type="text" name="DOB" readonly class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-4 control-label">Gender</label>
-                        <div class="col-md-8">
-                            <input type="text" name="Gender" readonly class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-4 control-label">Language</label>
-                        <div class="col-md-8">
-                            <input type="text" name="Language" readonly class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-4 control-label">Marital Status</label>
-                        <div class="col-md-8">
-                            <input type="text" name="MaritalStatus" readonly class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <label class="col-sm-4 control-label">Race</label>
-                        <div class="col-md-8">
-                            <input type="text" name="Race" readonly class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group form-group-sm">
-                        <div class="col-md-8 col-md-offset-4">
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <button type="reset" class="btn btn-default">Clear</button>
-                            <button id="btnMockData" type="button" title="Random Data" class="btn btn-info"><span class="glyphicon glyphicon-refresh"></span></button>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -97,29 +90,46 @@
     <script src="~/Scripts/webcam.js"></script>
     <script>
         $(document).ready(function (e) {
-            var $snapshot_datauri; //global variable to save snapshot data uri
+            var $snapshot_datauri = ""; //global variable to save snapshot data uri
             $('#btnTakeSnapshot').click(function (e) {
                 e.preventDefault();
                 // take snapshot and get image data
                 Webcam.snap(function (data_uri) {
                     $snapshot_datauri = data_uri; //save data_uri to global variable
                     // display results in page
-                    document.getElementById('results').innerHTML = '<img src="' + data_uri + '"/>';
-                    $('#formSearch').removeClass('hidden');
-                    
-                    //Webcam.upload(data_uri,
-                    //    '/Patient/Record/Search',
-                    //    function (code, data) {
-                    //        console.log(code);
-                    //        console.log(data);
-                    //        console.log(JSON.parse(data));
-                    //        //alert('Photo Captured');
-                    //    });
+                    $('#results').html('<img src="' + data_uri + '"/>').removeClass('hidden'); //display snapshot preview
+                    $('#matchResults').html('Searching for a Matching Result...');
+                    $('#btnWebcamStop').click(); //stop if webcam is running
+
+                    Webcam.upload(data_uri, '/Patient/Record/Search?getMatchingResult=false', function (code, data) {
+                        var result = JSON.parse(data);
+                        if (result.code === 200) { //if Matching Record Found
+                            $('#matchResults').html('<h5 class="text-danger">Duplicate Patient Record Found</h5>');
+                            $('#btnRegister').prop('disabled', true); //disable save button
+                        }
+                        else if (result.code === 404) { //if No Matching Record Found
+                            $('#matchResults').empty();
+                            $('#btnRegister').removeAttr('disabled'); //enable save button
+                        } else {
+                            $('#matchResults').html('<h5 class="text-danger">' + result.text + '</h5>');
+                            $('#btnRegister').prop('disabled', true); //disable save button
+                        }
+                    });
 
                 });
             });
 
             $('#btnWebcamStart').click(function (e) {
+                $snapshot_datauri = ""; //empty data uri
+                $('#matchResults').empty(); //clear search result
+                $('#btnRegister').prop('disabled', true);
+
+                $('#my_camera').removeClass('hidden'); //display camera preview
+                $('#results').addClass('hidden'); //hide snapshot preview
+
+                //toggle camera option buttons visibility 
+                $('#btnWebcamStart').hide(); 
+                $('#btnWebcamStop,#btnTakeSnapshot').show();
                 Webcam.set({
                     width: 320,
                     height: 240,
@@ -128,23 +138,34 @@
                 });
                 Webcam.attach('#my_camera');
             });
+
             $('#btnWebcamStop').click(function (e) {
+                $('#my_camera').addClass('hidden'); //hide camera preview
+
+                //toggle camera option buttons visibility 
+                $('#btnWebcamStart').show(); 
+                $('#btnWebcamStop,#btnTakeSnapshot').hide();
+
                 Webcam.reset();
             });
 
+            //get mock data for patient registration
             $('#btnMockData').click(function (e) {
-                $.post("/Patient/MockData/Generate").done(function (data) {
-                    //console.log(data);
-                    $('[name=PatientId]').val(data.PatientId);
-                    $('[name=DOB]').val(data.DOB);
-                    $('[name=Gender]').val(data.Gender);
-                    $('[name=Language]').val(data.Language);
-                    $('[name=MaritalStatus]').val(data.MaritalStatus);
-                    $('[name=Race]').val(data.Race);
-                    //$('[name=PopPercBP]').val(data.PopPercBP);
-                }).fail(function (error) {
-                    console.log('error occured while loading mock patient data');
-                });
+                $.post("/Patient/MockData/Generate")
+                    .done(function (data) {
+                        //console.log(data);
+                        $('[name=PatientId]').val(data.PatientId);
+                        $('[name=DOB]').val(data.DOB);
+                        $('[name=Gender]').val(data.Gender);
+                        $('[name=Language]').val(data.Language);
+                        $('[name=MaritalStatus]').val(data.MaritalStatus);
+                        $('[name=Race]').val(data.Race);
+                        //$('[name=PopPercBP]').val(data.PopPercBP);
+                    })
+                    .fail(function (error) {
+                        alert('error occured while loading mock patient data');
+                        console.log('error occured while loading mock patient data');
+                    });
             });
 
             var searializeForm = function (form, image_data_uri) {
@@ -159,36 +180,57 @@
                 var image_fmt = '';
                 if (image_data_uri.match(/^data\:image\/(\w+)/))
                     image_fmt = RegExp.$1;
-                else
+                else {
+                    alert("Please take a snapshot of the face before submit");
                     throw "Cannot locate image format in Data URI";
+                }
                 // extract raw base64 data from Data URI
                 var raw_image_data = image_data_uri.replace(/^data\:image\/\w+\;base64\,/, '');
                 // create a blob and decode our base64 to binary
                 var blob = new Blob([Webcam.base64DecToArr(raw_image_data)], { type: 'image/' + image_fmt });
                 formdata.append(form_elem_name, blob, form_elem_name + "." + image_fmt.replace(/e/, ''));
 
+                //if (!jQuery.isNumeric(formdata.PatientId)) {
+                    //alert("Please choose random data for patient profile by clicking generate button");
+                    //throw "Cannot find mock data profile for patient";
+                //}
+
                 return formdata;
             };
-            $('#formPatientRegister').submit(function (e) {
-                e.preventDefault();
-                var formdata = searializeForm($(this), $snapshot_datauri);
+            $('#formPatientRegister')
+                .on('submit', function (e) {
+                    e.preventDefault();
+                    var formdata = searializeForm($(this), $snapshot_datauri);
+                    $.ajax({
+                        url: "/Patient/Record/Save",
+                        data: formdata,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        method: "POST",
+                        success: function (data) {
+                            if (data.code === 200) {
+                                $('#formPatientRegister [type=reset]').click(); //reset form
+                                alert(data.text);
+                            }
+                            else
+                                alert(data.text);
+                            console.log(data);
+                        }, error: function (jqXHR, textStatus, errorThrown) {
+                            console.log(jqXHR);
+                            alert("Sorry, there was an error occured while processing your request. Please try again later.");
+                        }
+                    });
+                })
+                .on('click', '[type=reset]', function (e) {
+                    $snapshot_datauri = ""; //empty data uri
 
-                $.ajax({
-                    url: "/Patient/Record/Save",
-                    data: formdata,
-                    cache: false,
-                    contentType: false,
-                    processData: false,
-                    method: "POST",
-                    success: function (data) {
-                        alert('Patient Record Saved');
-                        console.log(data);
-                    }, error: function (jqXHR, textStatus, errorThrown) {
-                        console.log(jqXHR);
-                        alert("Sorry, there was an error occured while processing your request. Please try again later.");
-                    }
+                    $('#btnWebcamStop').click(); //stop if webcam is running
+                    $('#btnWebcamStart').click(); //start webcam
                 });
-            });
+
+            //start camera for registration
+            $('#btnWebcamStart').click();
         });
     </script>
 }
