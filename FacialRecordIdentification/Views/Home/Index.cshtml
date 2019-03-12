@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Patient Registration";
 }
 <div class="row">
     <div class="col-md-9">
@@ -101,20 +101,21 @@
                     $('#matchResults').html('Searching for a Matching Result...');
                     $('#btnWebcamStop').click(); //stop if webcam is running
 
-                    Webcam.upload(data_uri, '/Patient/Record/Search?getMatchingResult=false', function (code, data) {
-                        var result = JSON.parse(data);
-                        if (result.code === 200) { //if Matching Record Found
-                            $('#matchResults').html('<h5 class="text-danger">Duplicate Patient Record Found</h5>');
-                            $('#btnRegister').prop('disabled', true); //disable save button
-                        }
-                        else if (result.code === 404) { //if No Matching Record Found
-                            $('#matchResults').empty();
-                            $('#btnRegister').removeAttr('disabled'); //enable save button
-                        } else {
-                            $('#matchResults').html('<h5 class="text-danger">' + result.text + '</h5>');
-                            $('#btnRegister').prop('disabled', true); //disable save button
-                        }
-                    });
+                    $('#btnRegister').removeAttr('disabled'); //enable save button
+                    //Webcam.upload(data_uri, '/Patient/Record/Search?getMatchingResult=false', function (code, data) {
+                    //    var result = JSON.parse(data);
+                    //    if (result.code === 200) { //if Matching Record Found
+                    //        $('#matchResults').html('<h5 class="text-danger">Duplicate Patient Record Found</h5>');
+                    //        $('#btnRegister').prop('disabled', true); //disable save button
+                    //    }
+                    //    else if (result.code === 404) { //if No Matching Record Found
+                    //        $('#matchResults').empty();
+                    //        $('#btnRegister').removeAttr('disabled'); //enable save button
+                    //    } else {
+                    //        $('#matchResults').html('<h5 class="text-danger">' + result.text + '</h5>');
+                    //        $('#btnRegister').prop('disabled', true); //disable save button
+                    //    }
+                    //});
 
                 });
             });

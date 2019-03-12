@@ -19,13 +19,13 @@ namespace FacialRecordIdentification.Controllers
     {
         private readonly FacialRecMgmtDBDataContext dc;
         private readonly string _ProfileImgDirectory = "";
-        private readonly string _FRECApiURL= "http://localhost:5001/frec/api"; //face recognition module, Python FLASK web service url
+        private readonly string _FRECApiURL = "http://localhost:5001/frec/api"; //face recognition module, Python FLASK web service url
         Random rnd = new Random();
 
         public HomeController()
         {
             dc = new FacialRecMgmtDBDataContext(ConfigurationManager.ConnectionStrings["FacialRecMgmtDBConnectionString"].ConnectionString);
-            
+
             //set attachment save directory path for patient profile images
             _ProfileImgDirectory = AppDomain.CurrentDomain.BaseDirectory + "/App_Data/PatientProfileImgData";
 
@@ -92,24 +92,43 @@ namespace FacialRecordIdentification.Controllers
                 string _FileExtension = Path.GetExtension(model.WebCam.FileName);
                 string _NewImageName = string.Concat(Guid.NewGuid().ToString(), _FileExtension);
 
-                //model.WebCam.SaveAs(Path.Combine(_ProfileImgDirectory, _NewImageName)); //save uploaded new profile picture
-                Task<float[]> taskFaceEncode = FaceEncodeAsync(imageByteArray, _NewImageName); //Create new face encoding task
-
-                float[] unknownFaceEncodings = await taskFaceEncode; //get unknown face encodings
-                if (unknownFaceEncodings == default(float[]) || !unknownFaceEncodings.Any())
-                    return Json(new { code = HttpStatusCode.NotFound, text = "No Face Detected On Snapshot" });
-
-                dc.PatientProfiles.InsertOnSubmit(new PatientProfile
+                using (var client = new HttpClient())
                 {
-                    PatientID = model.PatientId,
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    ProfilePicture = _NewImageName,
-                    PreCalFaceEncoding = SetEncodings(unknownFaceEncodings), //convert face encodings to comma separated string
-                    CreatedDate = DateTime.Now
-                });
-                dc.SubmitChanges(); //save patient profile record
-                System.IO.File.WriteAllBytes(Path.Combine(_ProfileImgDirectory, _NewImageName), imageByteArray);  //save uploaded new profile picture on success
+                    using (var formData = new MultipartFormDataContent())
+                    {
+                        var contentPart = new ByteArrayContent(imageByteArray);
+                        contentPart.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data");
+                        formData.Add(contentPart, "webcam", _NewImageName);
+                        formData.Add(new StringContent(model.FirstName), "FirstName");
+                        formData.Add(new StringContent("M"), "Gender");
+
+                        Task<HttpResponseMessage> faceEncodeTask = client.PostAsync(_FRECApiURL + "/register", formData);
+                        string content = await faceEncodeTask.Result.Content.ReadAsStringAsync();
+
+                        //float[] faceEncodings = JsonConvert.DeserializeObject<float[]>(content);
+                        //return faceEncodings;
+                    }
+                    //return content;
+                }
+                
+                ////model.WebCam.SaveAs(Path.Combine(_ProfileImgDirectory, _NewImageName)); //save uploaded new profile picture
+                //Task<float[]> taskFaceEncode = FaceEncodeAsync(imageByteArray, _NewImageName); //Create new face encoding task
+
+                //float[] unknownFaceEncodings = await taskFaceEncode; //get unknown face encodings
+                //if (unknownFaceEncodings == default(float[]) || !unknownFaceEncodings.Any())
+                //    return Json(new { code = HttpStatusCode.NotFound, text = "No Face Detected On Snapshot" });
+
+                //dc.PatientProfiles.InsertOnSubmit(new PatientProfile
+                //{
+                //    PatientID = model.PatientId,
+                //    FirstName = model.FirstName,
+                //    LastName = model.LastName,
+                //    ProfilePicture = _NewImageName,
+                //    PreCalFaceEncoding = SetEncodings(unknownFaceEncodings), //convert face encodings to comma separated string
+                //    CreatedDate = DateTime.Now
+                //});
+                //dc.SubmitChanges(); //save patient profile record
+                //System.IO.File.WriteAllBytes(Path.Combine(_ProfileImgDirectory, _NewImageName), imageByteArray);  //save uploaded new profile picture on success
 
                 return Json(new { code = HttpStatusCode.OK, text = "Patient Profile Saved" });
             }
@@ -138,6 +157,24 @@ namespace FacialRecordIdentification.Controllers
 
                     float[] faceEncodings = JsonConvert.DeserializeObject<float[]>(content);
                     return faceEncodings;
+                }
+            }
+        }
+
+        [NonAction]
+        private async Task<string> FaceIdentify(byte[] filestream, string filename)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (var formData = new MultipartFormDataContent())
+                {
+                    var contentPart = new ByteArrayContent(filestream);
+                    contentPart.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data");
+                    formData.Add(contentPart, "webcam", filename);
+
+                    Task<HttpResponseMessage> faceEncodeTask = client.PostAsync(_FRECApiURL + "/identify", formData);
+                    string content = await faceEncodeTask.Result.Content.ReadAsStringAsync();
+                    return content;
                 }
             }
         }
@@ -191,40 +228,42 @@ namespace FacialRecordIdentification.Controllers
                 webcam.InputStream.CopyTo(newFileStream); // CopyTo method used to copy the input stream into newFileStream variable
                 byte[] imageByteArray = newFileStream.ToArray();
 
-                Task<float[]> taskFaceEncode = FaceEncodeAsync(imageByteArray, newFileName); //Create new face encoding task
-                Task<string> taskGenderDetect = GenderDetectAsync(imageByteArray, newFileName);
+                Task<string> taskFaceIdentify = FaceIdentify(imageByteArray, newFileName);
 
-                float[] unknownFaceEncodings = await taskFaceEncode; //get unknown face encodings
-                string ageGenderDetectResult = await taskGenderDetect;
-                //string ageGenderDetectResult = "NA";
+                //Task<float[]> taskFaceEncode = FaceEncodeAsync(imageByteArray, newFileName); //Create new face encoding task
+                //Task<string> taskGenderDetect = GenderDetectAsync(imageByteArray, newFileName);
 
-                if (unknownFaceEncodings == default(float[]) || !unknownFaceEncodings.Any())
-                    return Json(new { code = HttpStatusCode.BadRequest, text = "No Face Detected On Snapshot" });
+                //float[] unknownFaceEncodings = await taskFaceEncode; //get unknown face encodings
+                //string ageGenderDetectResult = await taskGenderDetect;
+                ////string ageGenderDetectResult = "NA";
 
-                char GenderFilter = 'U'; //U = Unknown, M=Male Only, F=Female Only
-                if (!new[] { "NA", "BAD_REQUEST" }.Contains(ageGenderDetectResult))
-                {
-                    var AgeGender = JsonConvert.DeserializeObject<PatientAgeGenderModel>(ageGenderDetectResult);
-                    GenderFilter = AgeGender.Gender;
-                }
+                //if (unknownFaceEncodings == default(float[]) || !unknownFaceEncodings.Any())
+                //    return Json(new { code = HttpStatusCode.BadRequest, text = "No Face Detected On Snapshot" });
 
-                //Filter Known Face Encodings Based on the detected Gender to minimize comparing known face encodings set
-                var knownFaceEncodings = dc.PatientCorePopulateds.Where(d => d.PatientGender == (GenderFilter == 'U' ? d.PatientGender : GenderFilter == 'M' ? "Male" : "Female"))
-                    .Join(dc.PatientProfiles, pcp => pcp.PatientID, pp => pp.PatientID, (pcp, pp) => pp).OrderBy(d => d.PatientID)
-                    .Select(d => new { d.PatientID, d.PreCalFaceEncoding }).ToList(); //load known face encodings from database
+                //char GenderFilter = 'U'; //U = Unknown, M=Male Only, F=Female Only
+                //if (!new[] { "NA", "BAD_REQUEST" }.Contains(ageGenderDetectResult))
+                //{
+                //    var AgeGender = JsonConvert.DeserializeObject<PatientAgeGenderModel>(ageGenderDetectResult);
+                //    GenderFilter = AgeGender.Gender;
+                //}
 
-                Task<string> taskDetectFace = DetectFaceAsync(
-                    knownFaceEncodings.Select(d => d.PatientID).ToArray(),
-                    knownFaceEncodings.Select(d => GetEncodings(d.PreCalFaceEncoding)).ToArray(),
-                    unknownFaceEncodings);
+                ////Filter Known Face Encodings Based on the detected Gender to minimize comparing known face encodings set
+                //var knownFaceEncodings = dc.PatientCorePopulateds.Where(d => d.PatientGender == (GenderFilter == 'U' ? d.PatientGender : GenderFilter == 'M' ? "Male" : "Female"))
+                //    .Join(dc.PatientProfiles, pcp => pcp.PatientID, pp => pp.PatientID, (pcp, pp) => pp).OrderBy(d => d.PatientID)
+                //    .Select(d => new { d.PatientID, d.PreCalFaceEncoding }).ToList(); //load known face encodings from database
 
-                //return Json(new { code = HttpStatusCode.OK, text = "Matching Record Found", data = gender });
-                var result = await taskDetectFace;
+                //Task<string> taskDetectFace = DetectFaceAsync(
+                //    knownFaceEncodings.Select(d => d.PatientID).ToArray(),
+                //    knownFaceEncodings.Select(d => GetEncodings(d.PreCalFaceEncoding)).ToArray(),
+                //    unknownFaceEncodings);
+
+                ////return Json(new { code = HttpStatusCode.OK, text = "Matching Record Found", data = gender });
+                //var result = await taskDetectFace;
+                var result = await taskFaceIdentify;
                 if (result == "BAD_REQUEST")
                     return Json(new { code = HttpStatusCode.BadRequest, text = "Bad Request" });
                 else if (result == "NA")
                     return Json(new { code = HttpStatusCode.NotFound, text = "No Matching Record Found" });
-
 
                 Guid patientId = Guid.Parse(result);
                 var diagnoseHistory = getMatchingResult ? PatientHistory(patientId) : null;
