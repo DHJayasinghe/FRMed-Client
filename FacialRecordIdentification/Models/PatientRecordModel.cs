@@ -10,9 +10,12 @@ namespace FacialRecordIdentification.Models
     /// </summary>
     public class CreatePatientRecordModel
     {
-        [Required]
-        public Guid PatientId { get; set; }
+        //[Required]
+        //public Guid PatientId { get; set; }
 
+        [Required]
+        public string Title { get; set; }
+        
         [Required]
         public string FirstName { get; set; }
 
@@ -20,26 +23,19 @@ namespace FacialRecordIdentification.Models
         public string LastName { get; set; }
 
         [Required]
+        public string Gender { get; set; }
+
+        public string DateOfBirth { get; set; }
+
+        public string NIC { get; set; }
+
+        [Required]
+        public string CivilStatus { get; set; }
+
+        [Required]
         public HttpPostedFileBase WebCam { get; set; }
     }
-
-    /// <summary>
-    /// Model used to send patient record search request to python web service
-    /// </summary>
-    public class SearchPatientRecordModel
-    {
-        public Guid[] KnownFaceIdArr { get; private set; }
-        public float[][] KnownFaceEncodingsArr { get; private set; }
-        public float[] UnknownFaceEncodings { get; private set; }
-
-        public SearchPatientRecordModel(Guid[] knownFaceIdArr, float[][] knownFaceEncodingsArr, float[] unknownFaceEncodings)
-        {
-            KnownFaceIdArr = knownFaceIdArr;
-            KnownFaceEncodingsArr = knownFaceEncodingsArr;
-            UnknownFaceEncodings = unknownFaceEncodings;
-        }
-    }
-
+    
     /// <summary>
     /// Patient Diagnosis History Details Model
     /// </summary>
