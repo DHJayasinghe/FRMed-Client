@@ -19,6 +19,8 @@ namespace FacialRecordIdentification.Persistent
         public string Gender { get; set; }
         public string Personal_Civil_Status { get; set; }
         public string HIN { get; set; }
+        //newly added two fields
         public string ProfileImage { get; set; }
+        public string ReferenceNo { get; set; }
     }
 }

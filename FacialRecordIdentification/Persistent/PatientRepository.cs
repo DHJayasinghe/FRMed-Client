@@ -7,13 +7,15 @@ using System.Linq;
 
 namespace FacialRecordIdentification.Persistent
 {
-    public class PatientRepository
+    public class PatientRepository : IPatientRepository
     {
         private readonly IDbConnection db;
 
         public PatientRepository() => db = new MySqlConnection(ConfigurationManager.ConnectionStrings["hhimsDBConnectionString"].ConnectionString);
 
         public Patient Get(int id) => db.Get<Patient>(id);
+
+        public Patient Get(string refno) => db.GetAll<Patient>().Where(d => d.ReferenceNo == refno).FirstOrDefault();
 
         public List<Patient> GetAll() => db.GetAll<Patient>().ToList();
 
@@ -26,5 +28,30 @@ namespace FacialRecordIdentification.Persistent
         public bool Update(Patient entity) => db.Update<Patient>(entity);
 
         public void Dispose() => db.Dispose();
+    }
+
+    public interface IPatientRepository
+    {
+        /// <summary>
+        /// Get Patient by Id
+        /// </summary>
+        Patient Get(int id);
+
+        /// <summary>
+        /// Get Patient by Reference No
+        /// </summary>
+        Patient Get(string refno);
+
+        /// <summary>
+        /// Create new Patient record
+        /// </summary>
+        long Insert(Patient entity);
+
+        /// <summary>
+        /// Update Patient record
+        /// </summary>
+        bool Update(Patient entity);
+
+        void Dispose();
     }
 }

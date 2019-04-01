@@ -19,7 +19,7 @@ namespace FacialRecordIdentification.Controllers
         private readonly FacialRecMgmtDBDataContext dc;
         private readonly string _ProfileImgDirectory = "";
         private readonly string _FRECApiURL = "http://localhost:5001/frec/api"; //face recognition module, Python FLASK web service url
-        private readonly PatientRepository patientRepo;
+        private readonly IPatientRepository patientRepo;
         Random rnd = new Random();
 
         public HomeController()
@@ -32,7 +32,9 @@ namespace FacialRecordIdentification.Controllers
             if (!Directory.Exists(_ProfileImgDirectory))
                 Directory.CreateDirectory(_ProfileImgDirectory);
 
+            ////Test data request
             patientRepo = new PatientRepository();
+            //var result = FRecRegister(Guid.NewGuid().ToString(), 'M', System.IO.File.ReadAllBytes(Path.Combine(_ProfileImgDirectory, "46d892d2-27e6-4e59-8f3f-60fb6de81aec.jpg")), "46d892d2-27e6-4e59-8f3f-60fb6de81aec.jpg");
         }
 
         public ActionResult Index() => View();
