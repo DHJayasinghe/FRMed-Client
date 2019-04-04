@@ -35,7 +35,29 @@ namespace FacialRecordIdentification.Models
         [Required]
         public HttpPostedFileBase WebCam { get; set; }
     }
-    
+
+    public class CreatePatientViewModel
+    {
+        [Required]
+        public string Title { get; set; }
+
+        [Required]
+        public string FirstName { get; set; }
+
+        [Required]
+        public string LastName { get; set; }
+
+        [Required]
+        public string Gender { get; set; }
+
+        public string DateOfBirth { get; set; }
+
+        public string NIC { get; set; }
+
+        [Required]
+        public string CivilStatus { get; set; }
+    }
+
     /// <summary>
     /// Patient Diagnosis History Details Model
     /// </summary>

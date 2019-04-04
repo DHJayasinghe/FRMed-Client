@@ -1,4 +1,5 @@
 ﻿using FacialRecordIdentification.Core;
+using FacialRecordIdentification.Models;
 using FacialRecordIdentification.Persistent;
 using System;
 using System.Collections.Generic;
@@ -48,8 +49,32 @@ namespace FacialRecordIdentification.Controllers
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public IHttpActionResult Post(CreatePatientViewModel model)
         {
+            try
+            {
+                patientRepo = new PatientRepository();
+                var patient = new Patient
+                {
+                    Full_Name_Registered = string.Format("{0} {1}", model.FirstName, model.LastName),
+                    Gender=model.Gender,
+                    Personal_Civil_Status=model.CivilStatus,
+                    Personal_Title=model.Title,
+                    DateOfBirth=DateTime.TryParse(model.DateOfBirth,out DateTime dob)?dob:default(DateTime?),
+                    NIC=model.NIC
+                };
+                var patientId=patientRepo.Insert(patient);
+                patient = patientRepo.Get((int)patientId);
+
+                if (patient == default(Patient))
+                    return NotFound();
+
+                return Ok(patient.ReferenceNo);
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
     }
 }

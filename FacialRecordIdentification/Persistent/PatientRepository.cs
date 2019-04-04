@@ -1,5 +1,6 @@
 ﻿using Dapper.Contrib.Extensions;
 using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -21,6 +22,7 @@ namespace FacialRecordIdentification.Persistent
 
         public long Insert(Patient entity)
         {
+            entity.ReferenceNo = Guid.NewGuid().ToString();
             entity.HIN = System.DateTime.Now.ToString("yyMMddHHmmss"); //generate 12 char mock Personal Health Number (PHN) using current DateTime
             return db.Insert(entity);
         }
