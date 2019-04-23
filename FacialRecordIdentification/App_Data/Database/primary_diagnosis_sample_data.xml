@@ -1,0 +1,1862 @@
+﻿<PrimaryDiagnoses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PrimaryDiagnosis>
+    <ID>1</ID>
+    <Code>C92.51</Code>
+    <Description>Acute myelomonocytic leukemia, in remission</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>1</ID>
+    <Code>M02.38</Code>
+    <Description>Reiter's disease, vertebrae</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>2</ID>
+    <Code>K91</Code>
+    <Description>Intraoperative and postprocedural complications and disorders of digestive system, not elsewhere classified</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>2</ID>
+    <Code>F40.01</Code>
+    <Description>Agoraphobia with panic disorder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>2</ID>
+    <Code>C40.11</Code>
+    <Description>Malignant neoplasm of short bones of right upper limb</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>3</ID>
+    <Code>M10.37</Code>
+    <Description>Gout due to renal impairment, ankle and foot</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>3</ID>
+    <Code>B33.4</Code>
+    <Description>Hantavirus (cardio)-pulmonary syndrome [HPS] [HCPS]</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>4</ID>
+    <Code>M05.442</Code>
+    <Description>Rheumatoid myopathy with rheumatoid arthritis of left hand</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>4</ID>
+    <Code>F12.15</Code>
+    <Description>Cannabis abuse with psychotic disorder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>4</ID>
+    <Code>E10.43</Code>
+    <Description>Type 1 diabetes mellitus with diabetic autonomic (poly)neuropathy</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>4</ID>
+    <Code>M12.162</Code>
+    <Description>Kaschin-Beck disease, left knee</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>4</ID>
+    <Code>T43.3X1</Code>
+    <Description>Poisoning by phenothiazine antipsychotics and neuroleptics, accidental (unintentional)</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>4</ID>
+    <Code>C54.3</Code>
+    <Description>Malignant neoplasm of fundus uteri</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>4</ID>
+    <Code>F06.3</Code>
+    <Description>Mood disorder due to known physiological condition</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>5</ID>
+    <Code>H75.01</Code>
+    <Description>Mastoiditis in infectious and parasitic diseases classified elsewhere, right ear</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>5</ID>
+    <Code>I97.110</Code>
+    <Description>Postprocedural cardiac insufficiency following cardiac surgery</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>5</ID>
+    <Code>B08.72</Code>
+    <Description>Yaba pox virus disease</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>6</ID>
+    <Code>F63.81</Code>
+    <Description>Intermittent explosive disorder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>6</ID>
+    <Code>O9A.5</Code>
+    <Description>Psychological abuse complicating pregnancy, childbirth and the puerperium</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>6</ID>
+    <Code>S37.812</Code>
+    <Description>Contusion of adrenal gland</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>7</ID>
+    <Code>M05.27</Code>
+    <Description>Rheumatoid vasculitis with rheumatoid arthritis of ankle and foot</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>7</ID>
+    <Code>N16</Code>
+    <Description>Renal tubulo-interstitial disorders in diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>7</ID>
+    <Code>D35.2</Code>
+    <Description>Benign neoplasm of pituitary gland</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>8</ID>
+    <Code>M01.X5</Code>
+    <Description>Direct infection of hip in infectious and parasitic diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>8</ID>
+    <Code>M63.831</Code>
+    <Description>Disorders of muscle in diseases classified elsewhere, right forearm</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>8</ID>
+    <Code>G60.1</Code>
+    <Description>Refsum's disease</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>8</ID>
+    <Code>M05.75</Code>
+    <Description>Rheumatoid arthritis with rheumatoid factor of hip without organ or systems involvement</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>8</ID>
+    <Code>E08.64</Code>
+    <Description>Diabetes mellitus due to underlying condition with hypoglycemia</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>8</ID>
+    <Code>Z22.31</Code>
+    <Description>Carrier of bacterial disease due to meningococci</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>8</ID>
+    <Code>M02.352</Code>
+    <Description>Reiter's disease, left hip</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>9</ID>
+    <Code>F01.5</Code>
+    <Description>Vascular dementia</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>9</ID>
+    <Code>C91.42</Code>
+    <Description>Hairy cell leukemia, in relapse</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>9</ID>
+    <Code>C21.8</Code>
+    <Description>Malignant neoplasm of overlapping sites of rectum, anus and anal canal</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>10</ID>
+    <Code>E72.4</Code>
+    <Description>Disorders of ornithine metabolism</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>10</ID>
+    <Code>C34.2</Code>
+    <Description>Malignant neoplasm of middle lobe, bronchus or lung</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>10</ID>
+    <Code>H16.433</Code>
+    <Description>Localized vascularization of cornea, bilateral</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>11</ID>
+    <Code>C18.3</Code>
+    <Description>Malignant neoplasm of hepatic flexure</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>11</ID>
+    <Code>C79.51</Code>
+    <Description>Secondary malignant neoplasm of bone</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>12</ID>
+    <Code>G71</Code>
+    <Description>Primary disorders of muscles</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>12</ID>
+    <Code>O46.023</Code>
+    <Description>Antepartum hemorrhage with disseminated intravascular coagulation, third trimester</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>13</ID>
+    <Code>C79.72</Code>
+    <Description>Secondary malignant neoplasm of left adrenal gland</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>13</ID>
+    <Code>B95.62</Code>
+    <Description>Methicillin resistant Staphylococcus aureus infection as the cause of diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>13</ID>
+    <Code>C05.1</Code>
+    <Description>Malignant neoplasm of soft palate</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>13</ID>
+    <Code>A52.0</Code>
+    <Description>Cardiovascular and cerebrovascular syphilis</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>14</ID>
+    <Code>Z13.83</Code>
+    <Description>Encounter for screening for respiratory disorder NEC</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>14</ID>
+    <Code>F45.41</Code>
+    <Description>Pain disorder exclusively related to psychological factors</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>14</ID>
+    <Code>M06.222</Code>
+    <Description>Rheumatoid bursitis, left elbow</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>15</ID>
+    <Code>C92.12</Code>
+    <Description>Chronic myeloid leukemia, BCR/ABL-positive, in relapse</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>15</ID>
+    <Code>Z13.22</Code>
+    <Description>Encounter for screening for metabolic disorder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>15</ID>
+    <Code>Q60.0</Code>
+    <Description>Renal agenesis, unilateral</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>15</ID>
+    <Code>O26.6</Code>
+    <Description>Liver and biliary tract disorders in pregnancy, childbirth and the puerperium</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>16</ID>
+    <Code>M05.261</Code>
+    <Description>Rheumatoid vasculitis with rheumatoid arthritis of right knee</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>16</ID>
+    <Code>E75.01</Code>
+    <Description>Sandhoff disease</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>16</ID>
+    <Code>M05.511</Code>
+    <Description>Rheumatoid polyneuropathy with rheumatoid arthritis of right shoulder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>16</ID>
+    <Code>C02.1</Code>
+    <Description>Malignant neoplasm of border of tongue</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>17</ID>
+    <Code>C72.1</Code>
+    <Description>Malignant neoplasm of cauda equina</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>17</ID>
+    <Code>K71.50</Code>
+    <Description>Toxic liver disease with chronic active hepatitis without ascites</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>17</ID>
+    <Code>Z12.71</Code>
+    <Description>Encounter for screening for malignant neoplasm of testis</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>17</ID>
+    <Code>M02.352</Code>
+    <Description>Reiter's disease, left hip</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>17</ID>
+    <Code>C94.32</Code>
+    <Description>Mast cell leukemia, in relapse</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>18</ID>
+    <Code>O10.13</Code>
+    <Description>Pre-existing hypertensive heart disease complicating the puerperium</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>18</ID>
+    <Code>O99.43</Code>
+    <Description>Diseases of the circulatory system complicating the puerperium</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>19</ID>
+    <Code>A98.3</Code>
+    <Description>Marburg virus disease</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>19</ID>
+    <Code>F14.180</Code>
+    <Description>Cocaine abuse with cocaine-induced anxiety disorder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>19</ID>
+    <Code>M05.252</Code>
+    <Description>Rheumatoid vasculitis with rheumatoid arthritis of left hip</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>19</ID>
+    <Code>M06.051</Code>
+    <Description>Rheumatoid arthritis without rheumatoid factor, right hip</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>20</ID>
+    <Code>M05.25</Code>
+    <Description>Rheumatoid vasculitis with rheumatoid arthritis of hip</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>20</ID>
+    <Code>M05.59</Code>
+    <Description>Rheumatoid polyneuropathy with rheumatoid arthritis of multiple sites</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>20</ID>
+    <Code>O98.6</Code>
+    <Description>Protozoal diseases complicating pregnancy, childbirth and the puerperium</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>20</ID>
+    <Code>D37.0</Code>
+    <Description>Neoplasm of uncertain behavior of lip, oral cavity and pharynx</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>21</ID>
+    <Code>N18.1</Code>
+    <Description>Chronic kidney disease, stage 1</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>21</ID>
+    <Code>C10.2</Code>
+    <Description>Malignant neoplasm of lateral wall of oropharynx</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>21</ID>
+    <Code>D41.4</Code>
+    <Description>Neoplasm of uncertain behavior of bladder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>22</ID>
+    <Code>O9A.1</Code>
+    <Description>Malignant neoplasm complicating pregnancy, childbirth and the puerperium</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>22</ID>
+    <Code>C71.8</Code>
+    <Description>Malignant neoplasm of overlapping sites of brain</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>22</ID>
+    <Code>E10.339</Code>
+    <Description>Type 1 diabetes mellitus with moderate nonproliferative diabetic retinopathy without macular edema</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>23</ID>
+    <Code>G47</Code>
+    <Description>Sleep disorders</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>23</ID>
+    <Code>M10.38</Code>
+    <Description>Gout due to renal impairment, vertebrae</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>23</ID>
+    <Code>F34.0</Code>
+    <Description>Cyclothymic disorder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>23</ID>
+    <Code>B73.1</Code>
+    <Description>Onchocerciasis without eye disease</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>24</ID>
+    <Code>M24.22</Code>
+    <Description>Disorder of ligament, elbow</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>24</ID>
+    <Code>O99.43</Code>
+    <Description>Diseases of the circulatory system complicating the puerperium</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>24</ID>
+    <Code>M05.132</Code>
+    <Description>Rheumatoid lung disease with rheumatoid arthritis of left wrist</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>24</ID>
+    <Code>E11.331</Code>
+    <Description>Type 2 diabetes mellitus with moderate nonproliferative diabetic retinopathy with macular edema</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>24</ID>
+    <Code>E10.331</Code>
+    <Description>Type 1 diabetes mellitus with moderate nonproliferative diabetic retinopathy with macular edema</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>25</ID>
+    <Code>M01.X</Code>
+    <Description>Direct infection of joint in infectious and parasitic diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>25</ID>
+    <Code>D65</Code>
+    <Description>Disseminated intravascular coagulation [defibrination syndrome]</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>25</ID>
+    <Code>C92.1</Code>
+    <Description>Chronic myeloid leukemia, BCR/ABL-positive</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>25</ID>
+    <Code>M05.51</Code>
+    <Description>Rheumatoid polyneuropathy with rheumatoid arthritis of shoulder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>25</ID>
+    <Code>F06.1</Code>
+    <Description>Catatonic disorder due to known physiological condition</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>26</ID>
+    <Code>M05.722</Code>
+    <Description>Rheumatoid arthritis with rheumatoid factor of left elbow without organ or systems involvement</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>26</ID>
+    <Code>H75.03</Code>
+    <Description>Mastoiditis in infectious and parasitic diseases classified elsewhere, bilateral</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>26</ID>
+    <Code>C91.1</Code>
+    <Description>Chronic lymphocytic leukemia of B-cell type</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>27</ID>
+    <Code>C94.22</Code>
+    <Description>Acute megakaryoblastic leukemia, in relapse</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>27</ID>
+    <Code>A48.2</Code>
+    <Description>Nonpneumonic Legionnaires' disease [Pontiac fever]</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>28</ID>
+    <Code>M05.272</Code>
+    <Description>Rheumatoid vasculitis with rheumatoid arthritis of left ankle and foot</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>28</ID>
+    <Code>D44.6</Code>
+    <Description>Neoplasm of uncertain behavior of carotid body</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>28</ID>
+    <Code>C18.7</Code>
+    <Description>Malignant neoplasm of sigmoid colon</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>29</ID>
+    <Code>M02.37</Code>
+    <Description>Reiter's disease, ankle and foot</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>29</ID>
+    <Code>O99.411</Code>
+    <Description>Diseases of the circulatory system complicating pregnancy, first trimester</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>29</ID>
+    <Code>D39.11</Code>
+    <Description>Neoplasm of uncertain behavior of right ovary</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>29</ID>
+    <Code>E08.641</Code>
+    <Description>Diabetes mellitus due to underlying condition with hypoglycemia with coma</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>30</ID>
+    <Code>D39.12</Code>
+    <Description>Neoplasm of uncertain behavior of left ovary</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>30</ID>
+    <Code>M84.552</Code>
+    <Description>Pathological fracture in neoplastic disease, left femur</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>31</ID>
+    <Code>M10.361</Code>
+    <Description>Gout due to renal impairment, right knee</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>31</ID>
+    <Code>E87.4</Code>
+    <Description>Mixed disorder of acid-base balance</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>31</ID>
+    <Code>D89.810</Code>
+    <Description>Acute graft-versus-host disease</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>32</ID>
+    <Code>C91.00</Code>
+    <Description>Acute lymphoblastic leukemia not having achieved remission</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>32</ID>
+    <Code>G55</Code>
+    <Description>Nerve root and plexus compressions in diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>32</ID>
+    <Code>M51</Code>
+    <Description>Thoracic, thoracolumbar, and lumbosacral intervertebral disc disorders</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>32</ID>
+    <Code>O04.82</Code>
+    <Description>Renal failure following (induced) termination of pregnancy</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>32</ID>
+    <Code>C33</Code>
+    <Description>Malignant neoplasm of trachea</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>33</ID>
+    <Code>Z12.2</Code>
+    <Description>Encounter for screening for malignant neoplasm of respiratory organs</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>33</ID>
+    <Code>I08.1</Code>
+    <Description>Rheumatic disorders of both mitral and tricuspid valves</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>33</ID>
+    <Code>F52.3</Code>
+    <Description>Orgasmic disorder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>33</ID>
+    <Code>C94.32</Code>
+    <Description>Mast cell leukemia, in relapse</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>33</ID>
+    <Code>M06.2</Code>
+    <Description>Rheumatoid bursitis</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>34</ID>
+    <Code>M24.251</Code>
+    <Description>Disorder of ligament, right hip</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>34</ID>
+    <Code>T46.0X5</Code>
+    <Description>Adverse effect of cardiac-stimulant glycosides and drugs of similar action</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>34</ID>
+    <Code>F33.1</Code>
+    <Description>Major depressive disorder, recurrent, moderate</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>34</ID>
+    <Code>M90</Code>
+    <Description>Osteopathies in diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>34</ID>
+    <Code>K57.5</Code>
+    <Description>Diverticular disease of both small and large intestine without perforation or abscess</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>34</ID>
+    <Code>H43</Code>
+    <Description>Disorders of vitreous body</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>34</ID>
+    <Code>F31.6</Code>
+    <Description>Bipolar disorder, current episode mixed</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>35</ID>
+    <Code>F31.4</Code>
+    <Description>Bipolar disorder, current episode depressed, severe, without psychotic features</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>35</ID>
+    <Code>K76.5</Code>
+    <Description>Hepatic veno-occlusive disease</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>36</ID>
+    <Code>O99.41</Code>
+    <Description>Diseases of the circulatory system complicating pregnancy</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>36</ID>
+    <Code>O04.86</Code>
+    <Description>Cardiac arrest following (induced) termination of pregnancy</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>36</ID>
+    <Code>B97.11</Code>
+    <Description>Coxsackievirus as the cause of diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>36</ID>
+    <Code>B97.34</Code>
+    <Description>Human T-cell lymphotrophic virus, type II [HTLV-II] as the cause of diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>36</ID>
+    <Code>D37.3</Code>
+    <Description>Neoplasm of uncertain behavior of appendix</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>37</ID>
+    <Code>N49.2</Code>
+    <Description>Inflammatory disorders of scrotum</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>37</ID>
+    <Code>I15.2</Code>
+    <Description>Hypertension secondary to endocrine disorders</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>38</ID>
+    <Code>D13.1</Code>
+    <Description>Benign neoplasm of stomach</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>38</ID>
+    <Code>M02.35</Code>
+    <Description>Reiter's disease, hip</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>38</ID>
+    <Code>C71.4</Code>
+    <Description>Malignant neoplasm of occipital lobe</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>38</ID>
+    <Code>Z22.31</Code>
+    <Description>Carrier of bacterial disease due to meningococci</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>38</ID>
+    <Code>C47.2</Code>
+    <Description>Malignant neoplasm of peripheral nerves of lower limb, including hip</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>39</ID>
+    <Code>C51.2</Code>
+    <Description>Malignant neoplasm of clitoris</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>39</ID>
+    <Code>C40.11</Code>
+    <Description>Malignant neoplasm of short bones of right upper limb</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>39</ID>
+    <Code>E08.42</Code>
+    <Description>Diabetes mellitus due to underlying condition with diabetic polyneuropathy</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>39</ID>
+    <Code>E08.32</Code>
+    <Description>Diabetes mellitus due to underlying condition with mild nonproliferative diabetic retinopathy</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>39</ID>
+    <Code>M11.052</Code>
+    <Description>Hydroxyapatite deposition disease, left hip</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>40</ID>
+    <Code>M11.071</Code>
+    <Description>Hydroxyapatite deposition disease, right ankle and foot</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>40</ID>
+    <Code>H26.223</Code>
+    <Description>Cataract secondary to ocular disorders (degenerative) (inflammatory), bilateral</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>40</ID>
+    <Code>D14</Code>
+    <Description>Benign neoplasm of middle ear and respiratory system</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>40</ID>
+    <Code>F52.0</Code>
+    <Description>Hypoactive sexual desire disorder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>41</ID>
+    <Code>C72.3</Code>
+    <Description>Malignant neoplasm of optic nerve</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>41</ID>
+    <Code>M05.13</Code>
+    <Description>Rheumatoid lung disease with rheumatoid arthritis of wrist</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>41</ID>
+    <Code>H15</Code>
+    <Description>Disorders of sclera</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>42</ID>
+    <Code>I25.84</Code>
+    <Description>Coronary atherosclerosis due to calcified coronary lesion</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>42</ID>
+    <Code>M11.072</Code>
+    <Description>Hydroxyapatite deposition disease, left ankle and foot</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>42</ID>
+    <Code>H47.42</Code>
+    <Description>Disorders of optic chiasm in (due to) neoplasm</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>42</ID>
+    <Code>M12.162</Code>
+    <Description>Kaschin-Beck disease, left knee</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>42</ID>
+    <Code>M12.111</Code>
+    <Description>Kaschin-Beck disease, right shoulder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>42</ID>
+    <Code>E79</Code>
+    <Description>Disorders of purine and pyrimidine metabolism</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>42</ID>
+    <Code>A42.0</Code>
+    <Description>Pulmonary actinomycosis</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>43</ID>
+    <Code>E30</Code>
+    <Description>Disorders of puberty, not elsewhere classified</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>43</ID>
+    <Code>Z49</Code>
+    <Description>Encounter for care involving renal dialysis</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>43</ID>
+    <Code>F18.17</Code>
+    <Description>Inhalant abuse with inhalant-induced dementia</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>43</ID>
+    <Code>J84.842</Code>
+    <Description>Pulmonary interstitial glycogenosis</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>43</ID>
+    <Code>F94.1</Code>
+    <Description>Reactive attachment disorder of childhood</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>44</ID>
+    <Code>C92.50</Code>
+    <Description>Acute myelomonocytic leukemia, not having achieved remission</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>44</ID>
+    <Code>T46.3X6</Code>
+    <Description>Underdosing of coronary vasodilators</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>44</ID>
+    <Code>C15.8</Code>
+    <Description>Malignant neoplasm of overlapping sites of esophagus</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>45</ID>
+    <Code>C67.5</Code>
+    <Description>Malignant neoplasm of bladder neck</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>45</ID>
+    <Code>C76.51</Code>
+    <Description>Malignant neoplasm of right lower limb</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>45</ID>
+    <Code>K50.1</Code>
+    <Description>Crohn's disease of large intestine</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>46</ID>
+    <Code>C91.5</Code>
+    <Description>Adult T-cell lymphoma/leukemia (HTLV-1-associated)</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>46</ID>
+    <Code>H36</Code>
+    <Description>Retinal disorders in diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>47</ID>
+    <Code>C11</Code>
+    <Description>Malignant neoplasm of nasopharynx</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>47</ID>
+    <Code>F16.151</Code>
+    <Description>Hallucinogen abuse with hallucinogen-induced psychotic disorder with hallucinations</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>47</ID>
+    <Code>M05.23</Code>
+    <Description>Rheumatoid vasculitis with rheumatoid arthritis of wrist</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>47</ID>
+    <Code>M84</Code>
+    <Description>Disorder of continuity of bone</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>47</ID>
+    <Code>K50.01</Code>
+    <Description>Crohn's disease of small intestine with complications</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>47</ID>
+    <Code>F95.1</Code>
+    <Description>Chronic motor or vocal tic disorder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>48</ID>
+    <Code>C69.61</Code>
+    <Description>Malignant neoplasm of right orbit</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>48</ID>
+    <Code>I08.1</Code>
+    <Description>Rheumatic disorders of both mitral and tricuspid valves</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>48</ID>
+    <Code>Q24.3</Code>
+    <Description>Pulmonary infundibular stenosis</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>49</ID>
+    <Code>E10.32</Code>
+    <Description>Type 1 diabetes mellitus with mild nonproliferative diabetic retinopathy</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>49</ID>
+    <Code>F45.4</Code>
+    <Description>Pain disorders related to psychological factors</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>49</ID>
+    <Code>C74.11</Code>
+    <Description>Malignant neoplasm of medulla of right adrenal gland</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>49</ID>
+    <Code>E08.51</Code>
+    <Description>Diabetes mellitus due to underlying condition with diabetic peripheral angiopathy without gangrene</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>49</ID>
+    <Code>G32.0</Code>
+    <Description>Subacute combined degeneration of spinal cord in diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>50</ID>
+    <Code>M90.51</Code>
+    <Description>Osteonecrosis in diseases classified elsewhere, shoulder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>50</ID>
+    <Code>E08.32</Code>
+    <Description>Diabetes mellitus due to underlying condition with mild nonproliferative diabetic retinopathy</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>50</ID>
+    <Code>M49.84</Code>
+    <Description>Spondylopathy in diseases classified elsewhere, thoracic region</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>50</ID>
+    <Code>D48.2</Code>
+    <Description>Neoplasm of uncertain behavior of peripheral nerves and autonomic nervous system</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>51</ID>
+    <Code>K00</Code>
+    <Description>Disorders of tooth development and eruption</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>51</ID>
+    <Code>M24.242</Code>
+    <Description>Disorder of ligament, left hand</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>51</ID>
+    <Code>C79.02</Code>
+    <Description>Secondary malignant neoplasm of left kidney and renal pelvis</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>51</ID>
+    <Code>E71.31</Code>
+    <Description>Disorders of fatty-acid oxidation</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>51</ID>
+    <Code>M24.272</Code>
+    <Description>Disorder of ligament, left ankle</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>51</ID>
+    <Code>E08.5</Code>
+    <Description>Diabetes mellitus due to underlying condition with circulatory complications</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>52</ID>
+    <Code>B40.1</Code>
+    <Description>Chronic pulmonary blastomycosis</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>52</ID>
+    <Code>E09.649</Code>
+    <Description>Drug or chemical induced diabetes mellitus with hypoglycemia without coma</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>52</ID>
+    <Code>E11.5</Code>
+    <Description>Type 2 diabetes mellitus with circulatory complications</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>53</ID>
+    <Code>D35.5</Code>
+    <Description>Benign neoplasm of carotid body</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>53</ID>
+    <Code>C63.2</Code>
+    <Description>Malignant neoplasm of scrotum</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>53</ID>
+    <Code>M06.25</Code>
+    <Description>Rheumatoid bursitis, hip</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>53</ID>
+    <Code>D44.5</Code>
+    <Description>Neoplasm of uncertain behavior of pineal gland</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>54</ID>
+    <Code>M05.741</Code>
+    <Description>Rheumatoid arthritis with rheumatoid factor of right hand without organ or systems involvement</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>54</ID>
+    <Code>F94.2</Code>
+    <Description>Disinhibited attachment disorder of childhood</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>54</ID>
+    <Code>C47</Code>
+    <Description>Malignant neoplasm of peripheral nerves and autonomic nervous system</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>54</ID>
+    <Code>M10.31</Code>
+    <Description>Gout due to renal impairment, shoulder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>54</ID>
+    <Code>D48.4</Code>
+    <Description>Neoplasm of uncertain behavior of peritoneum</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>55</ID>
+    <Code>H26.21</Code>
+    <Description>Cataract with neovascularization</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>55</ID>
+    <Code>D13.4</Code>
+    <Description>Benign neoplasm of liver</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>55</ID>
+    <Code>E08.0</Code>
+    <Description>Diabetes mellitus due to underlying condition with hyperosmolarity</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>55</ID>
+    <Code>H81.02</Code>
+    <Description>Ménière's disease, left ear</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>56</ID>
+    <Code>Z12.13</Code>
+    <Description>Encounter for screening for malignant neoplasm of small intestine</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>56</ID>
+    <Code>Z95.810</Code>
+    <Description>Presence of automatic (implantable) cardiac defibrillator</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>56</ID>
+    <Code>M06.37</Code>
+    <Description>Rheumatoid nodule, ankle and foot</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>56</ID>
+    <Code>K50.813</Code>
+    <Description>Crohn's disease of both small and large intestine with fistula</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>57</ID>
+    <Code>M06.361</Code>
+    <Description>Rheumatoid nodule, right knee</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>57</ID>
+    <Code>E09.351</Code>
+    <Description>Drug or chemical induced diabetes mellitus with proliferative diabetic retinopathy with macular edema</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>57</ID>
+    <Code>F18.150</Code>
+    <Description>Inhalant abuse with inhalant-induced psychotic disorder with delusions</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>57</ID>
+    <Code>E09.62</Code>
+    <Description>Drug or chemical induced diabetes mellitus with skin complications</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>58</ID>
+    <Code>M11.05</Code>
+    <Description>Hydroxyapatite deposition disease, hip</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>58</ID>
+    <Code>O07.32</Code>
+    <Description>Renal failure following failed attempted termination of pregnancy</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>58</ID>
+    <Code>D28.0</Code>
+    <Description>Benign neoplasm of vulva</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>59</ID>
+    <Code>O10.113</Code>
+    <Description>Pre-existing hypertensive heart disease complicating pregnancy, third trimester</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>59</ID>
+    <Code>E09.649</Code>
+    <Description>Drug or chemical induced diabetes mellitus with hypoglycemia without coma</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>59</ID>
+    <Code>D37.1</Code>
+    <Description>Neoplasm of uncertain behavior of stomach</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>60</ID>
+    <Code>F11</Code>
+    <Description>Opioid related disorders</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>60</ID>
+    <Code>H47.631</Code>
+    <Description>Disorders of visual cortex in (due to) neoplasm, right side of brain</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>60</ID>
+    <Code>C92.0</Code>
+    <Description>Acute myeloblastic leukemia</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>60</ID>
+    <Code>C41.0</Code>
+    <Description>Malignant neoplasm of bones of skull and face</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>60</ID>
+    <Code>M90.53</Code>
+    <Description>Osteonecrosis in diseases classified elsewhere, forearm</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>61</ID>
+    <Code>M05.752</Code>
+    <Description>Rheumatoid arthritis with rheumatoid factor of left hip without organ or systems involvement</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>61</ID>
+    <Code>I97.81</Code>
+    <Description>Intraoperative cerebrovascular infarction</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>61</ID>
+    <Code>D37.02</Code>
+    <Description>Neoplasm of uncertain behavior of tongue</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>62</ID>
+    <Code>O99.351</Code>
+    <Description>Diseases of the nervous system complicating pregnancy, first trimester</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>62</ID>
+    <Code>C16.2</Code>
+    <Description>Malignant neoplasm of body of stomach</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>62</ID>
+    <Code>M90.642</Code>
+    <Description>Osteitis deformans in neoplastic diseases, left hand</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>62</ID>
+    <Code>M01.X72</Code>
+    <Description>Direct infection of left ankle and foot in infectious and parasitic diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>62</ID>
+    <Code>E30</Code>
+    <Description>Disorders of puberty, not elsewhere classified</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>62</ID>
+    <Code>M10.322</Code>
+    <Description>Gout due to renal impairment, left elbow</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>63</ID>
+    <Code>C75.1</Code>
+    <Description>Malignant neoplasm of pituitary gland</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>63</ID>
+    <Code>F25.0</Code>
+    <Description>Schizoaffective disorder, bipolar type</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>64</ID>
+    <Code>O24.111</Code>
+    <Description>Pre-existing diabetes mellitus, type 2, in pregnancy, first trimester</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>65</ID>
+    <Code>M05.742</Code>
+    <Description>Rheumatoid arthritis with rheumatoid factor of left hand without organ or systems involvement</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>65</ID>
+    <Code>B95.1</Code>
+    <Description>Streptococcus, group B, as the cause of diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>65</ID>
+    <Code>G30</Code>
+    <Description>Alzheimer's disease</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>65</ID>
+    <Code>M90.511</Code>
+    <Description>Osteonecrosis in diseases classified elsewhere, right shoulder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>65</ID>
+    <Code>H30.812</Code>
+    <Description>Harada's disease, left eye</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>66</ID>
+    <Code>M06.31</Code>
+    <Description>Rheumatoid nodule, shoulder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>66</ID>
+    <Code>E09.62</Code>
+    <Description>Drug or chemical induced diabetes mellitus with skin complications</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>66</ID>
+    <Code>T43.3X</Code>
+    <Description>Poisoning by, adverse effect of and underdosing of phenothiazine antipsychotics and neuroleptics</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>66</ID>
+    <Code>F21</Code>
+    <Description>Schizotypal disorder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>66</ID>
+    <Code>C37</Code>
+    <Description>Malignant neoplasm of thymus</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>67</ID>
+    <Code>I25.110</Code>
+    <Description>Atherosclerotic heart disease of native coronary artery with unstable angina pectoris</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>67</ID>
+    <Code>M63.851</Code>
+    <Description>Disorders of muscle in diseases classified elsewhere, right thigh</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>68</ID>
+    <Code>Z91.15</Code>
+    <Description>Patient's noncompliance with renal dialysis</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>68</ID>
+    <Code>M05.5</Code>
+    <Description>Rheumatoid polyneuropathy with rheumatoid arthritis</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>68</ID>
+    <Code>D15.0</Code>
+    <Description>Benign neoplasm of thymus</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>68</ID>
+    <Code>C94.0</Code>
+    <Description>Acute erythroid leukemia</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>68</ID>
+    <Code>I25.75</Code>
+    <Description>Atherosclerosis of native coronary artery of transplanted heart with angina pectoris</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>69</ID>
+    <Code>C88.3</Code>
+    <Description>Immunoproliferative small intestinal disease</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>69</ID>
+    <Code>C49.8</Code>
+    <Description>Malignant neoplasm of overlapping sites of connective and soft tissue</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>69</ID>
+    <Code>E09.41</Code>
+    <Description>Drug or chemical induced diabetes mellitus with neurological complications with diabetic mononeuropathy</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>70</ID>
+    <Code>I25.82</Code>
+    <Description>Chronic total occlusion of coronary artery</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>70</ID>
+    <Code>M26.6</Code>
+    <Description>Temporomandibular joint disorders</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>71</ID>
+    <Code>J66.1</Code>
+    <Description>Flax-dressers' disease</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>71</ID>
+    <Code>E11.32</Code>
+    <Description>Type 2 diabetes mellitus with mild nonproliferative diabetic retinopathy</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>72</ID>
+    <Code>M90.6</Code>
+    <Description>Osteitis deformans in neoplastic diseases</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>73</ID>
+    <Code>I43</Code>
+    <Description>Cardiomyopathy in diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>73</ID>
+    <Code>M90.522</Code>
+    <Description>Osteonecrosis in diseases classified elsewhere, left upper arm</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>73</ID>
+    <Code>F14.15</Code>
+    <Description>Cocaine abuse with cocaine-induced psychotic disorder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>73</ID>
+    <Code>O24.013</Code>
+    <Description>Pre-existing diabetes mellitus, type 1, in pregnancy, third trimester</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>73</ID>
+    <Code>D55.2</Code>
+    <Description>Anemia due to disorders of glycolytic enzymes</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>74</ID>
+    <Code>I79.0</Code>
+    <Description>Aneurysm of aorta in diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>74</ID>
+    <Code>T82.4</Code>
+    <Description>Mechanical complication of vascular dialysis catheter</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>74</ID>
+    <Code>D12.1</Code>
+    <Description>Benign neoplasm of appendix</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>75</ID>
+    <Code>H16.433</Code>
+    <Description>Localized vascularization of cornea, bilateral</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>75</ID>
+    <Code>Q60.4</Code>
+    <Description>Renal hypoplasia, bilateral</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>75</ID>
+    <Code>O9A.53</Code>
+    <Description>Psychological abuse complicating the puerperium</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>75</ID>
+    <Code>I25.711</Code>
+    <Description>Atherosclerosis of autologous vein coronary artery bypass graft(s) with angina pectoris with documented spasm</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>75</ID>
+    <Code>E10.630</Code>
+    <Description>Type 1 diabetes mellitus with periodontal disease</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>75</ID>
+    <Code>H42</Code>
+    <Description>Glaucoma in diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>76</ID>
+    <Code>K08.121</Code>
+    <Description>Complete loss of teeth due to periodontal diseases, class I</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>76</ID>
+    <Code>O26.63</Code>
+    <Description>Liver and biliary tract disorders in the puerperium</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>76</ID>
+    <Code>O9A.513</Code>
+    <Description>Psychological abuse complicating pregnancy, third trimester</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>77</ID>
+    <Code>C19</Code>
+    <Description>Malignant neoplasm of rectosigmoid junction</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>77</ID>
+    <Code>B96.2</Code>
+    <Description>Escherichia coli [E. coli ] as the cause of diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>77</ID>
+    <Code>O98.611</Code>
+    <Description>Protozoal diseases complicating pregnancy, first trimester</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>77</ID>
+    <Code>C18.6</Code>
+    <Description>Malignant neoplasm of descending colon</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>78</ID>
+    <Code>E10.630</Code>
+    <Description>Type 1 diabetes mellitus with periodontal disease</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>79</ID>
+    <Code>M63</Code>
+    <Description>Disorders of muscle in diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>79</ID>
+    <Code>M72</Code>
+    <Description>Fibroblastic disorders</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>79</ID>
+    <Code>J14</Code>
+    <Description>Pneumonia due to Hemophilus influenzae</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>79</ID>
+    <Code>M12.161</Code>
+    <Description>Kaschin-Beck disease, right knee</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>80</ID>
+    <Code>O99.712</Code>
+    <Description>Diseases of the skin and subcutaneous tissue complicating pregnancy, second trimester</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>80</ID>
+    <Code>E11.64</Code>
+    <Description>Type 2 diabetes mellitus with hypoglycemia</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>80</ID>
+    <Code>I25.812</Code>
+    <Description>Atherosclerosis of bypass graft of coronary artery of transplanted heart without angina pectoris</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>80</ID>
+    <Code>O24.1</Code>
+    <Description>Pre-existing diabetes mellitus, type 2, in pregnancy, childbirth and the puerperium</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>80</ID>
+    <Code>F13.151</Code>
+    <Description>Sedative, hypnotic or anxiolytic abuse with sedative, hypnotic or anxiolytic-induced psychotic disorder with hallucinations</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>81</ID>
+    <Code>C94.6</Code>
+    <Description>Myelodysplastic disease, not classified</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>81</ID>
+    <Code>M05.49</Code>
+    <Description>Rheumatoid myopathy with rheumatoid arthritis of multiple sites</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>81</ID>
+    <Code>M84.51</Code>
+    <Description>Pathological fracture in neoplastic disease, shoulder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>82</ID>
+    <Code>Z12</Code>
+    <Description>Encounter for screening for malignant neoplasms</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>82</ID>
+    <Code>H47.53</Code>
+    <Description>Disorders of visual pathways in (due to) vascular disorders</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>83</ID>
+    <Code>F12.180</Code>
+    <Description>Cannabis abuse with cannabis-induced anxiety disorder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>83</ID>
+    <Code>S35.415</Code>
+    <Description>Laceration of left renal vein</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>83</ID>
+    <Code>K08.422</Code>
+    <Description>Partial loss of teeth due to periodontal diseases, class II</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>83</ID>
+    <Code>O10.11</Code>
+    <Description>Pre-existing hypertensive heart disease complicating pregnancy</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>84</ID>
+    <Code>C18.3</Code>
+    <Description>Malignant neoplasm of hepatic flexure</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>84</ID>
+    <Code>O24.42</Code>
+    <Description>Gestational diabetes mellitus in childbirth</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>84</ID>
+    <Code>C62.0</Code>
+    <Description>Malignant neoplasm of undescended testis</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>85</ID>
+    <Code>N25.1</Code>
+    <Description>Nephrogenic diabetes insipidus</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>85</ID>
+    <Code>H61.192</Code>
+    <Description>Noninfective disorders of pinna, left ear</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>85</ID>
+    <Code>O99.611</Code>
+    <Description>Diseases of the digestive system complicating pregnancy, first trimester</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>85</ID>
+    <Code>H47.0</Code>
+    <Description>Disorders of optic nerve, not elsewhere classified</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>86</ID>
+    <Code>C03.0</Code>
+    <Description>Malignant neoplasm of upper gum</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>86</ID>
+    <Code>K76.7</Code>
+    <Description>Hepatorenal syndrome</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>86</ID>
+    <Code>C75.3</Code>
+    <Description>Malignant neoplasm of pineal gland</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>87</ID>
+    <Code>Z13.810</Code>
+    <Description>Encounter for screening for upper gastrointestinal disorder</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>87</ID>
+    <Code>O24.410</Code>
+    <Description>Gestational diabetes mellitus in pregnancy, diet controlled</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>88</ID>
+    <Code>J44.1</Code>
+    <Description>Chronic obstructive pulmonary disease with (acute) exacerbation</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>88</ID>
+    <Code>D14.0</Code>
+    <Description>Benign neoplasm of middle ear, nasal cavity and accessory sinuses</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>88</ID>
+    <Code>Z13.85</Code>
+    <Description>Encounter for screening for nervous system disorders</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>88</ID>
+    <Code>M05.732</Code>
+    <Description>Rheumatoid arthritis with rheumatoid factor of left wrist without organ or systems involvement</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>88</ID>
+    <Code>M06.34</Code>
+    <Description>Rheumatoid nodule, hand</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>89</ID>
+    <Code>D12.7</Code>
+    <Description>Benign neoplasm of rectosigmoid junction</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>89</ID>
+    <Code>C38.2</Code>
+    <Description>Malignant neoplasm of posterior mediastinum</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>90</ID>
+    <Code>I67.81</Code>
+    <Description>Acute cerebrovascular insufficiency</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>90</ID>
+    <Code>C94.02</Code>
+    <Description>Acute erythroid leukemia, in relapse</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>90</ID>
+    <Code>N18.4</Code>
+    <Description>Chronic kidney disease, stage 4 (severe)</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>90</ID>
+    <Code>O99.35</Code>
+    <Description>Diseases of the nervous system complicating pregnancy, childbirth, and the puerperium</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>90</ID>
+    <Code>D63</Code>
+    <Description>Anemia in chronic diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>90</ID>
+    <Code>I51.3</Code>
+    <Description>Intracardiac thrombosis, not elsewhere classified</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>91</ID>
+    <Code>O10.213</Code>
+    <Description>Pre-existing hypertensive chronic kidney disease complicating pregnancy, third trimester</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>91</ID>
+    <Code>O98.63</Code>
+    <Description>Protozoal diseases complicating the puerperium</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>91</ID>
+    <Code>E09.621</Code>
+    <Description>Drug or chemical induced diabetes mellitus with foot ulcer</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>91</ID>
+    <Code>K57.5</Code>
+    <Description>Diverticular disease of both small and large intestine without perforation or abscess</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>91</ID>
+    <Code>C91.0</Code>
+    <Description>Acute lymphoblastic leukemia [ALL]</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>92</ID>
+    <Code>E09.359</Code>
+    <Description>Drug or chemical induced diabetes mellitus with proliferative diabetic retinopathy without macular edema</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>92</ID>
+    <Code>M49.87</Code>
+    <Description>Spondylopathy in diseases classified elsewhere, lumbosacral region</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>92</ID>
+    <Code>I25.10</Code>
+    <Description>Atherosclerotic heart disease of native coronary artery without angina pectoris</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>92</ID>
+    <Code>M90.632</Code>
+    <Description>Osteitis deformans in neoplastic diseases, left forearm</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>92</ID>
+    <Code>M05.17</Code>
+    <Description>Rheumatoid lung disease with rheumatoid arthritis of ankle and foot</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>93</ID>
+    <Code>E10.339</Code>
+    <Description>Type 1 diabetes mellitus with moderate nonproliferative diabetic retinopathy without macular edema</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>93</ID>
+    <Code>C40.81</Code>
+    <Description>Malignant neoplasm of overlapping sites of bone and articular cartilage of right limb</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>94</ID>
+    <Code>D16.2</Code>
+    <Description>Benign neoplasm of long bones of lower limb</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>94</ID>
+    <Code>E11.3</Code>
+    <Description>Type 2 diabetes mellitus with ophthalmic complications</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>94</ID>
+    <Code>M90.86</Code>
+    <Description>Osteopathy in diseases classified elsewhere, lower leg</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>94</ID>
+    <Code>A83.6</Code>
+    <Description>Rocio virus disease</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>95</ID>
+    <Code>G96.1</Code>
+    <Description>Disorders of meninges, not elsewhere classified</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>96</ID>
+    <Code>H34</Code>
+    <Description>Retinal vascular occlusions</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>96</ID>
+    <Code>K50.014</Code>
+    <Description>Crohn's disease of small intestine with abscess</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>96</ID>
+    <Code>D68.3</Code>
+    <Description>Hemorrhagic disorder due to circulating anticoagulants</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>96</ID>
+    <Code>J66.1</Code>
+    <Description>Flax-dressers' disease</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>96</ID>
+    <Code>C31.3</Code>
+    <Description>Malignant neoplasm of sphenoid sinus</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>96</ID>
+    <Code>M05.561</Code>
+    <Description>Rheumatoid polyneuropathy with rheumatoid arthritis of right knee</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>96</ID>
+    <Code>Q61.01</Code>
+    <Description>Congenital single renal cyst</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>97</ID>
+    <Code>Z13.0</Code>
+    <Description>Encounter for screening for diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>97</ID>
+    <Code>M90.6</Code>
+    <Description>Osteitis deformans in neoplastic diseases</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>97</ID>
+    <Code>I79.0</Code>
+    <Description>Aneurysm of aorta in diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>98</ID>
+    <Code>M63.832</Code>
+    <Description>Disorders of muscle in diseases classified elsewhere, left forearm</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>98</ID>
+    <Code>T43.3X5</Code>
+    <Description>Adverse effect of phenothiazine antipsychotics and neuroleptics</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>98</ID>
+    <Code>D12.9</Code>
+    <Description>Benign neoplasm of anus and anal canal</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>98</ID>
+    <Code>D31.41</Code>
+    <Description>Benign neoplasm of right ciliary body</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>98</ID>
+    <Code>M01.X1</Code>
+    <Description>Direct infection of shoulder joint in infectious and parasitic diseases classified elsewhere</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>98</ID>
+    <Code>Z22.31</Code>
+    <Description>Carrier of bacterial disease due to meningococci</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>99</ID>
+    <Code>C57.21</Code>
+    <Description>Malignant neoplasm of right round ligament</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>99</ID>
+    <Code>T46.3X6</Code>
+    <Description>Underdosing of coronary vasodilators</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>99</ID>
+    <Code>D31.41</Code>
+    <Description>Benign neoplasm of right ciliary body</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>100</ID>
+    <Code>M06.041</Code>
+    <Description>Rheumatoid arthritis without rheumatoid factor, right hand</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>100</ID>
+    <Code>C93.01</Code>
+    <Description>Acute monoblastic/monocytic leukemia, in remission</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>100</ID>
+    <Code>M1A.352</Code>
+    <Description>Chronic gout due to renal impairment, left hip</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>100</ID>
+    <Code>F11</Code>
+    <Description>Opioid related disorders</Description>
+  </PrimaryDiagnosis>
+  <PrimaryDiagnosis>
+    <ID>100</ID>
+    <Code>M05.441</Code>
+    <Description>Rheumatoid myopathy with rheumatoid arthritis of right hand</Description>
+  </PrimaryDiagnosis>
+</PrimaryDiagnoses>
