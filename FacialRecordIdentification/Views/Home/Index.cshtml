@@ -75,36 +75,6 @@
                                     </select>
                                 </div>
                             </div>
-                            @*<div class="form-group form-group-sm row">
-                                    <label class="col-sm-4 control-label">D.O.B</label>
-                                    <div class="col-md-8">
-                                        <div class="input-group">
-                                            <input type="text" name="DOB" readonly class="form-control" />
-                                            <div class="input-group-btn">
-                                                <button id="btnMockData" type="button" title="Generate Random Data" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-refresh"></span></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>*@
-
-                            @*<div class="form-group form-group-sm row">
-                                    <label class="col-sm-4 control-label">Language</label>
-                                    <div class="col-md-8">
-                                        <input type="text" name="Language" readonly class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="form-group form-group-sm row">
-                                    <label class="col-sm-4 control-label">Marital Status</label>
-                                    <div class="col-md-8">
-                                        <input type="text" name="MaritalStatus" readonly class="form-control" />
-                                    </div>
-                                </div>
-                                <div class="form-group form-group-sm row">
-                                    <label class="col-sm-4 control-label">Race</label>
-                                    <div class="col-md-8">
-                                        <input type="text" name="Race" readonly class="form-control" />
-                                    </div>
-                                </div>*@
                             <div class="form-group form-group-sm row">
                                 <div class="col-md-8 col-md-offset-4">
                                     <button id="btnRegister" type="submit" class="btn btn-primary">Save</button>
@@ -136,25 +106,10 @@
                     $snapshot_datauri = data_uri; //save data_uri to global variable
                     // display results in page
                     $('#results').html('<img src="' + data_uri + '"/>').removeClass('hidden'); //display snapshot preview
-                    $('#matchResults').html('Searching for a Matching Result...');
+                    //$('#matchResults').html('Searching for a Matching Result...');
                     $('#btnWebcamStop').click(); //stop if webcam is running
 
                     $('#btnRegister').removeAttr('disabled'); //enable save button
-                    //Webcam.upload(data_uri, '/Patient/Record/Search?getMatchingResult=false', function (code, data) {
-                    //    var result = JSON.parse(data);
-                    //    if (result.code === 200) { //if Matching Record Found
-                    //        $('#matchResults').html('<h5 class="text-danger">Duplicate Patient Record Found</h5>');
-                    //        $('#btnRegister').prop('disabled', true); //disable save button
-                    //    }
-                    //    else if (result.code === 404) { //if No Matching Record Found
-                    //        $('#matchResults').empty();
-                    //        $('#btnRegister').removeAttr('disabled'); //enable save button
-                    //    } else {
-                    //        $('#matchResults').html('<h5 class="text-danger">' + result.text + '</h5>');
-                    //        $('#btnRegister').prop('disabled', true); //disable save button
-                    //    }
-                    //});
-
                 });
             });
 
@@ -186,25 +141,6 @@
                 $('#btnWebcamStop,#btnTakeSnapshot').hide();
 
                 Webcam.reset();
-            });
-
-            //get mock data for patient registration
-            $('#btnMockData').click(function (e) {
-                $.post("/Patient/MockData/Generate")
-                    .done(function (data) {
-                        //console.log(data);
-                        $('[name=PatientId]').val(data.PatientId);
-                        $('[name=DOB]').val(data.DOB);
-                        $('[name=Gender]').val(data.Gender);
-                        $('[name=Language]').val(data.Language);
-                        $('[name=MaritalStatus]').val(data.MaritalStatus);
-                        $('[name=Race]').val(data.Race);
-                        //$('[name=PopPercBP]').val(data.PopPercBP);
-                    })
-                    .fail(function (error) {
-                        alert('error occured while loading mock patient data');
-                        console.log('error occured while loading mock patient data');
-                    });
             });
 
             var searializeForm = function (form, image_data_uri) {
@@ -254,7 +190,7 @@
                             }
                             else
                                 alert(data.text);
-                            console.log(data);
+                            //console.log(data);
                         }, error: function (jqXHR, textStatus, errorThrown) {
                             console.log(jqXHR);
                             alert("Sorry, there was an error occured while processing your request. Please try again later.");

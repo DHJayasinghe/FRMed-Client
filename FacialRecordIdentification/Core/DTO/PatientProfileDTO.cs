@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FacialRecordIdentification.Core
+namespace FacialRecordIdentification
 {
     public class PatientProfileDTO
     {
@@ -10,7 +10,9 @@ namespace FacialRecordIdentification.Core
         public string Gender { get; set; }
         public string DateOfBirth { get; set; }
         public string PersonalTitle { get; set; }
+        public string CivilStatus { get; set; }
         public string PHN { get; set; }
+        public string FaceProfile { get; set; }
 
         public IEnumerable<LabDiagnosisDTO> LabHistory { get; set; }
         public IEnumerable<MedicalDiagnosisDTO> MedicalHistory { get; set; }

@@ -61,21 +61,19 @@
                         var result = JSON.parse(data);
                         //console.log(result);
                         if (result.code === 200) {
-                            $('#matchResults').html('<img src="' + result.data.Profile.Picture + '"/>');
+                            $('#matchResults').html('<img src="data:image/jpg;base64,' + result.data.FaceProfile + '" style="width:100%"/>');
 
                             var appendstrng = '';
                             //console.log(result.data.Admissions);
-                            $.each(result.data.Admissions, function (index, obj) {
-                                appendstrng += '<tr><td>' + obj.DiagnosisCode + '</td><td>' + obj.DiagnosisDescription + '</td></tr>';
+                            $.each(result.data.MedicalHistory, function (index, obj) {
+                                appendstrng += '<tr><td>' + obj.Code + '</td><td>' + obj.Description + '</td></tr>';
                             });
                             $('#tblPrimaryDiagnosis').append(appendstrng); //display patient diagnosis details
 
                             appendstrng =
-                                '<tr><th colspan="2" class="text-center">' + result.data.Profile.FullName +'</th></tr>' +
-                                '<tr><th>D.O.B</th><td>' + result.data.Profile.DateOfBirth + '</td></tr>' +
-                                '<tr><th>Language</th><td>' + result.data.Profile.Language + '</td></tr>' +
-                                '<tr><th>Marital Status</th><td>' + result.data.Profile.MaritalStatus + '</td></tr>' +
-                                '<tr><th>Race</th><td>' + result.data.Profile.Race + '</td></tr>';
+                                '<tr><th colspan="2" class="text-center">' + result.data.FullName +'</th></tr>' +
+                                '<tr><th>D.O.B</th><td>' + result.data.DateOfBirth + '</td></tr>' +
+                                '<tr><th>Marital Status</th><td>' + result.data.CivilStatus + '</td></tr>';
                             $('#tblPatientProfile').append(appendstrng);  //display patient profile details
 
                         } else if (result.code === 404) {

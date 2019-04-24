@@ -1,5 +1,6 @@
 ﻿using FacialRecordIdentification.Models;
 using FacialRecordIdentification.Persistent;
+using Newtonsoft.Json;
 using System;
 using System.Configuration;
 using System.IO;
@@ -16,70 +17,27 @@ namespace FacialRecordIdentification.Controllers
     [RoutePrefix("Patient")]
     public class HomeController : Controller
     {
-        private readonly FacialRecMgmtDBDataContext dc;
-        private readonly string _ProfileImgDirectory = "";
-        private readonly string _FRECApiURL = "http://localhost:5001/frec/api"; //face recognition module, Python FLASK web service url
-        private readonly IPatientRepository patientRepo;
+        private readonly string _FRMedEndpointAddress = "http://localhost:5001/frmed/api"; //FRMed Web API endpoint address
         Random rnd = new Random();
+
+        private readonly IPatientRepository patientRepo; //hhims db repository
+        private readonly ISampleDataRepository sampleDataRepo; //sample data repository
 
         public HomeController()
         {
-            dc = new FacialRecMgmtDBDataContext(ConfigurationManager.ConnectionStrings["FacialRecMgmtDBConnectionString"].ConnectionString);
-
-            //set attachment save directory path for patient profile images
-            _ProfileImgDirectory = AppDomain.CurrentDomain.BaseDirectory + "/App_Data/PatientProfileImgData";
-
-            if (!Directory.Exists(_ProfileImgDirectory))
-                Directory.CreateDirectory(_ProfileImgDirectory);
-
-            ////Test data request
             patientRepo = new PatientRepository();
-            //var result = FRecRegister(Guid.NewGuid().ToString(), 'M', System.IO.File.ReadAllBytes(Path.Combine(_ProfileImgDirectory, "46d892d2-27e6-4e59-8f3f-60fb6de81aec.jpg")), "46d892d2-27e6-4e59-8f3f-60fb6de81aec.jpg");
+            sampleDataRepo = new SampleDataRepository();
         }
 
         public ActionResult Index() => View();
 
         public ActionResult About() => View();
-
+        
         /// <summary>
-        /// Return random patient diagnosis record for Patient profile registration process (Mock data)
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost, Route("MockData/Generate")]
-        public JsonResult RandomMockData()
-        {
-            try
-            {
-                //return dummy patient diagnosis profile ids which is not used yet, for registration purposes
-                var _PatientIdArr = dc.PatientCorePopulateds.Where(d => !dc.PatientProfiles.Any(x => x.PatientID == d.PatientID)).Select(d => d.PatientID).ToArray();
-                int _RandIndex = rnd.Next(0, _PatientIdArr.Count()); //select random patient diagnosis profile
-                Guid _SelectedPatientId = _PatientIdArr[_RandIndex];
-
-                //return patient profile data belong to selected profile id
-                var record = dc.PatientCorePopulateds.Where(d => d.PatientID == _SelectedPatientId).ToList().Select(d => new
-                {
-                    PatientId = d.PatientID,
-                    DOB = d.PatientDateOfBirth.ToString("yyyy-MM-dd"),
-                    Gender = d.PatientGender,
-                    Language = d.PatientLanguage,
-                    MaritalStatus = d.PatientMaritalStatus,
-                    Race = d.PatientRace,
-                    PopPercBP = d.PatientPopulationPercentageBelowPoverty
-                }).First();
-
-                return Json(record);
-            }
-            catch (Exception ex)
-            {
-                return Json(new { code = 500, text = ex.Message, log = ex });
-            }
-        }
-
-        /// <summary>
-        /// New patient record registration using patient diagnosis mock data
+        /// New patient record registration using scanned patient image
         /// </summary>
         [HttpPost, Route("Record/Save")]
-        public async Task<JsonResult> SavePatientRecord(CreatePatientRecordModel model)
+        public async Task<JsonResult> SavePatientRecord(RegisterPatientViewModel model)
         {
             try
             {
@@ -87,28 +45,29 @@ namespace FacialRecordIdentification.Controllers
                 model.WebCam.InputStream.CopyTo(newFileStream); //copy the input stream into newFileStream variable
                 byte[] imageByteArray = newFileStream.ToArray();
 
-                string _profileImageName = string.Concat(Guid.NewGuid().ToString(), Path.GetExtension(model.WebCam.FileName));
-                model.WebCam.SaveAs(Path.Combine(_ProfileImgDirectory, _profileImageName)); //save uploaded new profile picture
+                var referenceNo = Guid.NewGuid().ToString();
+                string imageFileName = string.Concat(referenceNo, Path.GetExtension(model.WebCam.FileName)); //generate new file name
 
-                //var patientId = patientRepo //save new patient record
-                //    .Insert(new Patient
-                //    {
-                //        LPID = 1,
-                //        HID = 1,
-                //        Personal_Title = model.Title,
-                //        Full_Name_Registered = model.FirstName + " " + model.LastName,
-                //        Personal_Used_Name = "",
-                //        NIC = model.NIC,
-                //        DateOfBirth = !string.IsNullOrEmpty(model.DateOfBirth) ? Convert.ToDateTime(model.DateOfBirth) : default(DateTime?),
-                //        Gender = model.Gender,
-                //        Personal_Civil_Status = model.CivilStatus,
-                //        ProfileImage = _profileImageName
-                //    });
-                //var patient = patientRepo.Get(Convert.ToInt32(patientId));
+                var result = await FRMedRegister(imageByteArray, imageFileName, referenceNo); //calling FRMed API register method (request => FaceImage, Reference#)
+                if (result.code != 200) //if not a success response
+                    return Json(result);
 
-                Task<string> taskFRecRegister = FRecRegister(Guid.NewGuid().ToString(), Convert.ToChar(model.Gender), imageByteArray, _profileImageName);
-                //Task<string> taskFRecRegister = FRecRegister(patient.HIN, Convert.ToChar(patient.Gender), imageByteArray, _profileImageName);
-                var result = await taskFRecRegister;
+                //if success => register details in HHIMS database with generated Reference#
+                var patient = new Patient
+                {
+                    Full_Name_Registered = string.Format("{0} {1}", model.FirstName, model.LastName),
+                    Gender = model.Gender,
+                    Personal_Civil_Status = model.CivilStatus,
+                    Personal_Title = model.Title,
+                    DateOfBirth = DateTime.TryParse(model.DateOfBirth, out DateTime dob) ? dob : default(DateTime?),
+                    NIC = model.NIC,
+                    ReferenceNo = referenceNo
+                };
+                var patientId = patientRepo.Insert(patient);
+                patient = patientRepo.Get((int)patientId);
+
+                if (patient == default(Patient))
+                    return Json(new { code = HttpStatusCode.OK, text = "Patient Registration Failed" });
 
                 return Json(new { code = HttpStatusCode.OK, text = "Patient Profile Saved" });
             }
@@ -119,7 +78,7 @@ namespace FacialRecordIdentification.Controllers
         }
 
         [NonAction]
-        private async Task<string> FRecRegister(string referenceNo, char gender, byte[] frontalFace, string fileName)
+        private async Task<FRMedResponseDAO> FRMedRegister(byte[] frontalFace, string fileName, string referenceNo)
         {
             using (var client = new HttpClient())
             {
@@ -128,16 +87,70 @@ namespace FacialRecordIdentification.Controllers
                     var content = new ByteArrayContent(frontalFace);
                     content.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data");
                     formData.Add(content, "FrontalFace", fileName);
-                    formData.Add(new StringContent(referenceNo), "ReferencenNo");
-                    formData.Add(new StringContent(gender.ToString()), "Gender");
+                    formData.Add(new StringContent(referenceNo), "ReferenceNo");
 
-                    return await client.PostAsync(_FRECApiURL + "/register", formData).Result.Content.ReadAsStringAsync();
+                    Task<HttpResponseMessage> faceEncodeTask = client.PostAsync(_FRMedEndpointAddress + "/register", formData);
+                    var response = await faceEncodeTask.Result.Content.ReadAsStringAsync();
+
+                    return JsonConvert.DeserializeObject<FRMedResponseDAO>(response);
                 }
             }
         }
 
+        /// <summary>
+        /// Search Patient Medical Record using scanned patient image
+        /// </summary>
+        [HttpPost, Route("Record/Search")]
+        public async Task<JsonResult> SearchPatientRecord(HttpPostedFileBase webcam)
+        {
+            try
+            {
+                string newFileName = webcam.FileName;
+                MemoryStream newFileStream = new MemoryStream();
+                webcam.InputStream.CopyTo(newFileStream); // CopyTo method used to copy the input stream into newFileStream variable
+                byte[] imageByteArray = newFileStream.ToArray();
+
+                var result = await FRMedIdentify(imageByteArray, newFileName); //calling FRMed API identify method (response => Reference#, FaceImage)
+                if (result.code != 200) //if not a success response
+                    return Json(result);
+
+                //if success => get details from HHIMS database by Reference#
+                var patient = patientRepo.Get(result.data.ReferenceNo);
+                if (patient == default(Patient))
+                    return Json(new { code = HttpStatusCode.NotFound, text = "No Matching Record Found" });
+
+                int randomRecordId = rnd.Next(1, 100); //select random record id from 1-100 -> for random sample data selection
+
+                var labhistory = sampleDataRepo.GetLabDiagnosisDS().LabDiagnosis.Where(d => d.ID == randomRecordId)?
+                    .OrderByDescending(d => d.LabDateTime).Take(100) //take 100 records
+                    .Select(d => new LabDiagnosisDTO(d.LabDateTime) { Name = d.LabName, Value = d.LabValue, Unit = d.LabUnits }).ToList(); //select random lab history belong to random record id
+                var medicalhistory = sampleDataRepo.GetPrimaryDiagnosisDS().PrimaryDiagnosis.Where(d => d.ID == randomRecordId)?
+                    .Select(d => new MedicalDiagnosisDTO() { Code = d.Code, Description = d.Description }).ToList(); //select random medical history belong to random record id
+
+                var response = new PatientProfileDTO()
+                {
+                    Id = result.data.ReferenceNo,
+                    FaceProfile = result.data.FaceImage,
+                    FullName = patient.Full_Name_Registered,
+                    DateOfBirth = patient.DateOfBirth?.ToString("dd/MM/yyyy"),
+                    Gender = patient.Gender,
+                    PersonalTitle = patient.Personal_Title,
+                    CivilStatus = patient.Personal_Civil_Status,
+                    PHN = patient.HIN,
+                    LabHistory = labhistory,
+                    MedicalHistory = medicalhistory
+                };
+
+                return Json(new { code = HttpStatusCode.OK, text = "Matching Record Found", data = response });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { code = HttpStatusCode.InternalServerError, text = "Internal Server Error Occured", data = ex }); ;
+            }
+        }
+
         [NonAction]
-        private async Task<string> FRecIdentify(byte[] frontalFace, string fileName)
+        private async Task<FRMedResponseDAO> FRMedIdentify(byte[] frontalFace, string fileName)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -147,84 +160,11 @@ namespace FacialRecordIdentification.Controllers
                     contentPart.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data");
                     formData.Add(contentPart, "FrontalFace", fileName);
 
-                    Task<HttpResponseMessage> faceEncodeTask = client.PostAsync(_FRECApiURL + "/identify", formData);
-                    return await faceEncodeTask.Result.Content.ReadAsStringAsync();
+                    Task<HttpResponseMessage> faceEncodeTask = client.PostAsync(_FRMedEndpointAddress + "/identify", formData);
+                    var response = await faceEncodeTask.Result.Content.ReadAsStringAsync();
+
+                    return JsonConvert.DeserializeObject<FRMedResponseDAO>(response);
                 }
-            }
-        }
-
-        /// <summary>
-        /// Search Patient Medical Record using Uploaded Patient Image
-        /// </summary>
-        [HttpPost, Route("Record/Search")]
-        public async Task<JsonResult> SearchPatientRecord(HttpPostedFileBase webcam, bool getMatchingResult = true)
-        {
-            try
-            {
-                string newFileName = webcam.FileName;
-                MemoryStream newFileStream = new MemoryStream();
-                webcam.InputStream.CopyTo(newFileStream); // CopyTo method used to copy the input stream into newFileStream variable
-                byte[] imageByteArray = newFileStream.ToArray();
-
-                var result = await FRecIdentify(imageByteArray, newFileName);
-
-                if (result == "BAD_REQUEST")
-                    return Json(new { code = HttpStatusCode.BadRequest, text = "Bad Request" });
-                else if (result == "NA")
-                    return Json(new { code = HttpStatusCode.NotFound, text = "No Matching Record Found" });
-
-                Guid patientId = Guid.Parse(result);
-                var diagnoseHistory = getMatchingResult ? PatientHistory(patientId) : null;
-
-                return Json(new { code = HttpStatusCode.OK, text = "Matching Record Found", data = diagnoseHistory });
-            }
-            catch (Exception ex)
-            {
-                return Json(new { code = HttpStatusCode.InternalServerError, text = "Internal Server Error Occured", data = ex }); ;
-            }
-        }
-
-        /// <summary>
-        /// Retrieve Matiching Patient Profile Picture
-        /// </summary>
-        [HttpGet, Route("Profile/Image")]
-        public ActionResult LoadProfilePic(string imageName)
-        {
-            string picturePath = Path.Combine(_ProfileImgDirectory, imageName);
-            if (!System.IO.File.Exists(picturePath))
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-
-            return File(picturePath, "image/jpg");
-        }
-
-        /// <summary>
-        /// Return Patient Profile Medical Diagnose History by Patient ID
-        /// </summary>
-        [NonAction]
-        public PatientDiagnosisHistoryModel PatientHistory(Guid patientId)
-        {
-            try
-            {
-                var admissions = dc.AdmissionsDiagnosesCorePopulates
-                    .Where(d => d.PatientID == patientId).AsEnumerable();
-                //.Select(d => new PatientAdmissionDiagnoseModel(d.AdmissionID, d.PrimaryDiagnosisCode, d.PrimaryDiagnosisDescription));
-                var labResults = dc.LabsCorePopulateds.Where(d => d.PatientID == patientId).AsEnumerable();
-
-                var diagnoseHistory = dc.PatientProfiles.Where(d => d.PatientID == patientId).ToList()
-                    .Join(dc.PatientCorePopulateds.Where(d => d.PatientID == patientId).ToList(), pp => pp.PatientID, pcp => pcp.PatientID, (pp, pcp) => new PatientDiagnosisHistoryModel(
-                        new PatientprofileDetailsModel(pp.PatientID, pp.FirstName, pp.LastName, pcp.PatientDateOfBirth, pcp.PatientRace, pcp.PatientMaritalStatus, pcp.PatientLanguage, "/Patient/Profile/Image?imageName=" + pp.ProfilePicture),
-                        admissions.Select(ad => new PatientAdmissionDiagnoseModel(ad.AdmissionID, ad.PrimaryDiagnosisCode, ad.PrimaryDiagnosisDescription,
-                        labResults.Where(lr => lr.AdmissionID == ad.AdmissionID).Take(100).Select(lr => new PatientLabsResultModel(lr.LabName,
-                            lr.LabValue,
-                            lr.LabUnits,
-                            lr.LabDateTime
-                        )).ToList())).ToList().OrderBy(ad => ad.AdmissionId).ToList())).FirstOrDefault();
-
-                return diagnoseHistory;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
             }
         }
     }
